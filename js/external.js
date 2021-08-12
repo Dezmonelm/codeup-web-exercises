@@ -7,7 +7,7 @@ alert('I love the color ' + favColor + '!')
 var theLittleMermaid = 3 * 3;
 theLittleMermaid = 3 * 3;
 console.log('theLittleMermaid');
-prompt('How long was The Little Mermaid kept')
+prompt('There is a $3 rental fee per day.' + '<br>'  + 'How long was The Little Mermaid kept')
 alert('payout ' + theLittleMermaid)
 var brotherBear = 5 * 3;
 brotherBear = 5 * 3;
