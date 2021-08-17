@@ -49,13 +49,37 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-analyzeColor(randomColor);
-    console.log(analyzeColor(randomColor));
+// analyzeColor(randomColor);
+//     console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+var colors = prompt('What is the color?')
+switch (colors) {
+    case 'red':
+        alert('the color is ' + colors);
+        break;
+    case 'orange':
+        alert('the color is ' + colors);
+        break;
+    case 'yellow':
+        alert('the color is ' + colors);
+        break;
+    case 'blue':
+        alert('the color is ' + colors);
+        break;
+    case 'green':
+        alert('the color is ' + colors);
+        break;
+    case 'indigo':
+        alert('the color is ' + colors)
+        break;
+    case 'purple':
+        alert('the color is ' + colors)
+        break;
+}
 
 /**
  * TODO:
@@ -64,6 +88,11 @@ analyzeColor(randomColor);
  * function to show it to the user.
  */
 
+var userInput;
+function userInput(input) { prompt('What color would you like? ' + analyzeColor(userInput));
+    return userInput;
+    alert(userInput + ' is what you get!');
+}
 /* ########################################################################## */
 
 /**
@@ -86,15 +115,59 @@ analyzeColor(randomColor);
  * return value.
  */
 
+// var promo = custNum(Math.random('LUCKY NUMBER ' x <= 5 '!'));
+// var luckyNumber = custNum;
+//     if { luckyNumber === 0;
+//     alert('L')
+//     } ele if {
+
+// }
+
+function calculateTotal(luckyNumber, totalNum) {
+    switch(luckyNumber) {
+        case 0:
+            alert('No discount')
+            return totalNum
+            break;
+        case 1:
+            alert('10% discount');
+            return totalNum * (10 / 100);
+            break;
+        case 2:
+            alert('25% discount');
+            return totalNum * (25 / 100);
+            break;
+        case 3:
+            alert('35% discount');
+            return totalNum * (35 / 100);
+            break;
+        case 4:
+            alert('50% discount');
+            return totalNum * (50 / 100);
+            break;
+        case 5:
+            alert('IT\'S ALL FREE!');
+            return totalNum * (0 / 100);
+            break;
+    }
+}
+console.log(calculateTotal(1 , 100));
+console.log(calculateTotal(2 , 100));
+console.log(calculateTotal(3 , 100));
+console.log(calculateTotal(4 , 100));
+console.log(calculateTotal(5 / 100));
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
  * Prompt the user for their total bill, then use your `calculateTotal` function
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
- */
+//  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+var userInput = prompt('How much is your bill? ')
+alert(luckyNumber' is your lucky number:' ';' userInput ': is your bill');
+alert(calculateTotal())
 
 /**
  * TODO:
