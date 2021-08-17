@@ -26,9 +26,19 @@ if(haveToy) {
 
 // TODO: Quasar~ create a WHILE loop that runs as long as i is less than 10;
 
+var i = 0;
+
+while(i < 10) {
+    console.log('loop number ' + i);
+    i++;
+}
 
 //~*~ Do-While Loops ~*~
+var secret = 'sesame';
 
+do {
+    var secret = prompt('What is the secret password?');
+} while (secret !== 'sesame');
 
 // A do/while loop is quite similar to a while loop. The biggest difference is that a do/while loop will run at least once
 // [do this thing for sure this first time . . then check condition to continue VS. check condition . . will I do this thing at all?]
@@ -60,6 +70,10 @@ if(haveToy) {
 //     console.log("This loop has run " + incrementer + " time(s).");
 // }
 
+for (var incrementer = 1; incrementer <=; incrementer++){
+    console.log('This loop has run ' + incrementer + 'times.');
+}
+
 // The for loop has more to it as you can see. Let's break down the arguments:
 
 // - incrementer initialization - Here we are declaring the variable for our incrementer, as well as its value.
@@ -86,9 +100,15 @@ if(haveToy) {
 //     console.log("This is a bit of a tricky way to run a for loop, but hey, it works...");
 // }
 
+for (var i = 'A'; i.length < 8; i = i + 'A') {
+    console.log('hope it works'+ i);
+}
+
 // We can get a loop to stop using break;
 
-// var x = 0;
+
+
+var x = 0;
 //
 // while (true) {
 //     alert("This is the song that never ends. It just goes on and on my friends. Somebody started singing not knowing what it was, and now we'll all just keep on singing this because");
@@ -105,7 +125,7 @@ if(haveToy) {
 //         break;
 //     }
 //     console.log(j);
-// }
+}
 
 // Notice that by having the break, we're able to get out of the loop that would otherwise run forever.
 
