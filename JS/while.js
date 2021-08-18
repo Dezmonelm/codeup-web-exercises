@@ -21,12 +21,20 @@ console.log('hi')
 
 var min = 50;
 var max 100;
-var number =  function randomNum(min, max) {
-    return Math.random() * (randommax - min + 1))
-var number;
+var customerCones(x);
 
-} do number(){
-    console.log(number + 'how many cones do you want?')
+// This is how you get a random number between 50 and 100
+var allCones = Math.floor(Math.random() * 50) + 50;
+// This expression will generate a random number between 1 and 5
+Math.floor(Math.random() * 5) + 1;
+
+// var number =  function randomNum(min, max) {
+//     return Math.random() * (randommax - min + 1))
+// var number;
+
+} do (x = 5; x - customerCones; x++ ){
+    x++;
+    console.log(number 'how many cones do you want?')
     while {
 
     }
