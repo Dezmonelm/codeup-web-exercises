@@ -164,10 +164,10 @@ console.log(calculateTotal(5 / 100));
  * price before the discount was, and what their price after the discount is.
 //  */
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-var userInput = prompt('How much is your bill? ')
-alert(luckyNumber' is your lucky number:' ';' userInput ': is your bill');
-alert(calculateTotal())
+// var luckyNumber = Math.floor(Math.random() * 6);
+// var userInput = prompt('How much is your bill? ')
+// alert(luckyNumber' is your lucky number:' ';' userInput ': is your bill');
+// alert(calculateTotal())
 
 /**
  * TODO:
@@ -185,3 +185,9 @@ alert(calculateTotal())
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+confirm('What number would you like to enter?');
+var userInput = num;
+alert(num %= 0 'Even number');
+alert(num === 100 'Positive number');
+alert(num = true);
