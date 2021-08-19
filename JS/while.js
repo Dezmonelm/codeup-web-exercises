@@ -10,7 +10,7 @@ console.log('hi')
 //
 //     }
 //     }
-// }
+// // }
 
 // Do While Loop
 // An ice cream seller can't go home until she sells all of her cones. First write enough code that generates a random ' +
@@ -19,9 +19,9 @@ console.log('hi')
 // 'clients. Use a do-while loop to log to the console the amount of cones sold to each person. This is a way get the ' +
 // 'random numbers for this exercise.
 
-var min = 50;
-var max 100;
-var customerCones(x);
+// var min = 50;
+// var max =100;
+// var customerCones(x);
 
 // This is how you get a random number between 50 and 100
 var allCones = Math.floor(Math.random() * 50) + 50;
@@ -32,10 +32,23 @@ Math.floor(Math.random() * 5) + 1;
 //     return Math.random() * (randommax - min + 1))
 // var number;
 
-} do (x = 5; x - customerCones; x++ ){
-    x++;
-    console.log(number 'how many cones do you want?')
-    while {
+// } do (x = 5; x - customerCones; x++ ){
+//     x++;
+//     console.log(number 'how many cones do you want?')
+//     while {
+//
+//     }
+// }
 
+do {
+    alert('There are' + allCones + ' cones left.');
+    var userInput = prompt('Input a number');
+    // Or allCones = allCone-userInput
+    if (allCones < userInput) {
+        alert('We don\'t have that many cones left.');
+        continue;
     }
-}
+    allCones -= userInput;
+
+} while (allCones > 0);
+alert('ALL DONE!');
