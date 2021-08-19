@@ -2,6 +2,7 @@
 
 /* ########################################################################## */
 console.log('Hi');
+
 /**
  * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
@@ -24,7 +25,7 @@ console.log('Hi');
 // console.log(analyzeColor)
 function analyzeColor(input) {
     alert('The color is ' + input);
-   if (input === 'blue') {
+    if (input === 'blue') {
         console.log('blue is the color of the sky')
 
     } else if (input === 'cyan') {
@@ -35,6 +36,7 @@ function analyzeColor(input) {
         console.log('This is not blue, red, or cyan');
     }
 }
+
 // console.log(!analyzeColor 'not a color defined');
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -89,10 +91,13 @@ switch (colors) {
  */
 
 var userInput;
-function userInput(input) { prompt('What color would you like? ' + analyzeColor(userInput));
+
+function userInput(input) {
+    prompt('What color would you like? ' + analyzeColor(userInput));
     return userInput;
     alert(userInput + ' is what you get!');
 }
+
 /* ########################################################################## */
 
 /**
@@ -124,7 +129,7 @@ function userInput(input) { prompt('What color would you like? ' + analyzeColor(
 // }
 
 function calculateTotal(luckyNumber, totalNum) {
-    switch(luckyNumber) {
+    switch (luckyNumber) {
         case 0:
             alert('No discount')
             return totalNum
@@ -151,10 +156,11 @@ function calculateTotal(luckyNumber, totalNum) {
             break;
     }
 }
-console.log(calculateTotal(1 , 100));
-console.log(calculateTotal(2 , 100));
-console.log(calculateTotal(3 , 100));
-console.log(calculateTotal(4 , 100));
+
+console.log(calculateTotal(1, 100));
+console.log(calculateTotal(2, 100));
+console.log(calculateTotal(3, 100));
+console.log(calculateTotal(4, 100));
 console.log(calculateTotal(5 / 100));
 /**
  * TODO:
@@ -162,11 +168,13 @@ console.log(calculateTotal(5 / 100));
  * Prompt the user for their total bill, then use your `calculateTotal` function
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
-//  */
+ //  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
 // var userInput = prompt('How much is your bill? ')
-// alert(luckyNumber' is your lucky number:' ';' userInput ': is your bill');
+// alert('What\'s your lucky number' + userInput)
+// Alert('' + )
+// // alert(luckyNumber' is your lucky number:' ';' userInput ': is your bill');
 // alert(calculateTotal())
 
 /**
@@ -185,9 +193,18 @@ console.log(calculateTotal(5 / 100));
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+function lastOne() {
+    var yesOk = confirm('What number would you like to enter?');
+    if (yesOk === true) {
+        var userNumber = prompt('enter number');
+        if (isNaN(userNumber) === true) {
 
-confirm('What number would you like to enter?');
-var userInput = num;
-alert(num %= 0 'Even number');
-alert(num === 100 'Positive number');
-alert(num = true);
+        }
+    }
+    return 'function';
+}
+
+// var userInput = num;
+// alert(num %= 0 'Even number');
+// alert(num === 100 'Positive number');
+// alert(num = true);
