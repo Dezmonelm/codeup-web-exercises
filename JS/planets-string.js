@@ -36,5 +36,7 @@ console.log('Hello');
     console.log(planetBreak);
 
 
+    var planetsHTML = '<ul><li>' + planetsArrays.join('</li><li>') + ('</li>li></ul>ul>');
+    console.log(planetsHTML);
 })();
 
