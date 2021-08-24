@@ -78,7 +78,7 @@ console.log('-------'),
      */
 console.log('------');
 
-
+var num = [1, 2, 3, 4, 5]
     function first(num) {
         return num[0];
 
