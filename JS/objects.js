@@ -12,7 +12,20 @@ console.log('HI');
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+//
+        var person = {
+            firstName: 'Dezmone',
+            lastName: 'Musgrove',
+    }
+    console.log(person.firstName);
+        console.log(person.lastName);
+// var firstName = {};
+// firstName = 'Dezmone';
+// console.log(firstName);
+//
+// var lastName = {};
+// lastName = 'Musgrove';
+// console.log(lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -22,6 +35,16 @@ console.log('HI');
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+  // var sayHello = firstName + " " + lastName;
+  // console.log(sayHello);
+
+    person.sayHello =  {
+     sentence:    'Hello from ' + person.firstName + ' ' + person.lastName + '!',
+    };
+    console.log(person.sayHello.sentence);
+
+
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -37,11 +60,21 @@ console.log('HI');
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function(shopper) {
+        if(shopper.amount <= 200) {
+            console.log(shopper.name + 'spend more than $200')
+        } else {
+            console.log(shopper.amount * .12);
+        }
+
+    })
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -56,6 +89,43 @@ console.log('HI');
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+
+
+    var books = [
+        {title: 'The Giver',
+            author: {
+                firstName: 'Lois',
+                lastName: 'Lowry'},
+        },
+
+        {title: 'The 40 Laws of Power',
+            author: {
+                firstName: 'Robert',
+                lastName: 'Green',},
+        },
+
+        {title: 'Twilight',
+            author: {
+                firstName: 'Stephenie',
+                lastName: 'Meyer'},
+        },
+
+        {title: 'Where the Red Firn Grows',
+            author: {
+                firstName: 'Wilson',
+                lastName: 'Rawls'},
+        },
+
+        {title: 'The Hunger Games',
+            author: {
+                firstName: 'Suzanne',
+                lastName: 'Collins'},
+        },
+    ];
+
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -80,6 +150,11 @@ console.log('HI');
      *      ---
      *      ...
      */
+for(var x = 0; x < books.length; x++) {
+console.log('Here you will find the book ' + books[x].title + ' with the author' + books[x].author + '.');
+// console.log(books.author[x] + ' is the author.');
+}
+
 
     /**
      * Bonus:
