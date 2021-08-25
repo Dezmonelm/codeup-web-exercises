@@ -1,4 +1,3 @@
-console.log('Hi');
 (function() {
     "use strict";
 
