@@ -21,21 +21,21 @@ console.log('Hi');
  * console.logging the function's return value
  */
 
-// var analyzeColor = true;
-// console.log(analyzeColor)
-function analyzeColor(input) {
-    alert('The color is ' + input);
+function analyzeColor (input) {
     if (input === 'blue') {
-        console.log('blue is the color of the sky')
-
-    } else if (input === 'cyan') {
-        console.log('cyan is the color chosen')
+        return 'The sky is blue!';
     } else if (input === 'red') {
-        console.log('the ball is red')
+        return 'The ball is red!';
+    } else if (input === 'voilet'){
+        return 'The purse is violet.'
     } else {
-        console.log('This is not blue, red, or cyan');
+        return 'I don\'t know anything about ' + input + '. ';
     }
-}
+};
+console.log(analyzeColor('blue'));
+console.log(analyzeColor('red'));
+console.log(analyzeColor('What is that?'));
+console.log(analyzeColor('violet'));
 
 // console.log(!analyzeColor 'not a color defined');
 // Don't change the next two lines!
@@ -51,8 +51,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-// analyzeColor(randomColor);
-//     console.log(analyzeColor(randomColor));
+analyzeColor(randomColor);
+    console.log(analyzeColor(randomColor));
 
 /**
  * TODO:

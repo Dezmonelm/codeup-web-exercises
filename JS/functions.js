@@ -20,7 +20,7 @@ function sayHello(name) {
  *
  * console.log 'helloMessage' to check your work
  */
-// When you "store" the result, you
+When you "store" the result, you
 var helloMessage = sayHello('Dezmone');
     console.log(helloMessage);
 
@@ -31,6 +31,8 @@ var helloMessage = sayHello('Dezmone');
  * console.
  */
 
+var myName = 'Dezmone';
+console.log('Dezmone');
 var myName = 'Dezmone'
 console.log(sayHello());
 
@@ -61,6 +63,7 @@ function isTwo(x) {
     return x === 2;
 
 }
+console.log(random);
 console.log(isTwo(random));
 
 
@@ -85,7 +88,7 @@ console.log(calculateTip(25.50, .25));
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
- */
+//  */
 
 var billTotal = prompt('What is your bill amount?');
 var tipGiven = prompt('what is your tip amount?');
@@ -108,8 +111,9 @@ alert('Here is your tip. $' + tip);
  */
 
 
-function applyDiscount(price, discountPercent){
-    var discount = price * discountPercent;
-    var total = price - discount;
-    return (total)
-}
+function applyDiscount(price,discountPercent) {
+    return price - (price * discountPercent )
+};
+var originalPrice = 10;
+var discount = .2;
+console.log(applyDiscount(originalPrice, discount));

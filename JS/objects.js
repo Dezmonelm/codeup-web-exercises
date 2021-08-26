@@ -72,8 +72,7 @@ console.log('HI');
         } else {
             console.log(shopper.amount * .12);
         }
-
-    })
+    });
 
 
     /** TODO:
@@ -166,5 +165,24 @@ console.log('Here you will find the book ' + books[x].title + ' with the author'
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
+function createBook(title, name) {
+    var nameArr - name.split(' ');
+    var firstName = nameArr;
+    var lastName = nameArr;
+    return: {
+        var book = [
+            
+        ];
+        }
+    }
+    
+    function showBooksinfo(book) {
+    console.log('Title ' book.title);
+    console.log('Author ' book.author.firstName + ' ' + book.author.lastName);
+    console.log('------');
+    }
+    
+    books.forEach(function (book, index){
+        console.log();
+    })
 })();
