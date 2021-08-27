@@ -36,9 +36,15 @@ for (var num = 0; num < 10; num++) {
 
 
 // // Create a for loop that uses console.log to create the output shown below.
-//
-// for (var i =100; i < 100; i - 5);
-//     while(i = 100 ) {
-//         console.log('fives' + i)
-//     }
-console.log();
+//first loop control how many lines you have
+for (var num = 1; num < 10; num++) {
+    //output is just an empty string
+    var output = ''
+    // console.log(num);
+    //the second loop controls how many times each number concatinates
+    for (var newNum = 1; newNum <= num; newNum++) {
+        //This turns the integer into a string ---- example '' + 1 = '1'
+        output = output + num;
+    }
+    console.log(output);
+}
