@@ -48,3 +48,9 @@ for (var num = 1; num < 10; num++) {
     }
     console.log(output);
 }
+
+// Create a for loop that uses console.log to create the output shown below.
+
+for (var x =100; x >= 5; x = x - 5) {
+    console.log(x);
+}
