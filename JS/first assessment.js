@@ -36,7 +36,7 @@ function isNotString(input) {
 var message;
 
 function isEmptyString(input) {
-    if (input === '""') {
+    if (input === '') {
         message = 'string is empty';
     } else {
         return message = false;
