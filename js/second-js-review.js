@@ -9,21 +9,22 @@
  */
 
 // Define a function named isANumber that takes in a value and returns true if the input is numeric or not. Numeric strings are not considered as numbers and should return false.
-// function isANumber(value) {
-//     if (value === null) {
-//         return false;
-//     } else if (typeof value === 'boolean') {
-//         return false;
-//     } else if (!isNaN(value)) {
-//         return (true);
-//     } else {
-//         return false;
-//     }
-// }
+function isANumber(value) {
+    if (value === null) {
+        return false;
+    } else if (typeof value === 'boolean') {
+        return false;
+    } else if (!isNaN(value)) {
+        return (true);
+    } else {
+        return false;
+    }
+}
 
+console.log(Number('42'));
 //review answer
-function isANumber(input) {
-    return typeof input === 'number';
+// function isANumber(input) {
+//     return typeof input === 'number';
 }
 
 
@@ -187,11 +188,11 @@ function sumOfSquares(a, b) {
 // }
 
 // review answer
-function isPalindrome(input) {
-    if(typeof input !== 'string') {
-        return false;
-    }
-    input = input.toLocaleUpperCase();
-
-    return input === input.split('').reverse().join('');
+// function isPalindrome(input) {
+//     if(typeof input !== 'string') {
+//         return false;
+//     }
+//     input = input.toLocaleUpperCase();
+//
+//     return input === input.split('').reverse().join('');
 }
