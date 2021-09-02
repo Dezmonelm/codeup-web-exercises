@@ -9,23 +9,26 @@
  */
 
 // Define a function named isANumber that takes in a value and returns true if the input is numeric or not. Numeric strings are not considered as numbers and should return false.
-function isANumber(value) {
-    if (value === null) {
-        return false;
-    } else if (typeof value === 'boolean') {
-        return false;
-    } else if (!isNaN(value)) {
-        return (true);
-    } else {
-        return false;
-    }
-}
+// function isANumber(value) {
+//     if (value === null) {
+//         return false;
+//     } else if (typeof value === 'boolean') {
+//         return false;
+//     } else if (!isNaN(value)) {
+//         return (true);
+//     } else {
+//         return false;
+//     }
+// }
+function isANumber (stringVar) {
+    return typeof(stringVar) == 'number';
 
-console.log(Number('42'));
+}
+// console.log(Number('42'));
 //review answer
 // function isANumber(input) {
 //     return typeof input === 'number';
-}
+// }
 
 
 // Define a function named increment that takes in an input and adds 1 to it if the input is numeric. If the input is not numeric, then return false.
@@ -39,11 +42,20 @@ console.log(Number('42'));
 // }
 
 // review answer
-function increment(input) {
-    if(isNaN(parseInt(input))) {
+// function increment(input) {
+//     if(isNaN(parseInt(input))) {
+//         return false;
+//     }
+//     return ++input;
+// }
+
+function increment (input) {
+    if (isANumber(input)) {
+        return input + 1;
+    } else {
         return false;
     }
-    return ++input;
+
 }
 // Define a function named decrement. If the provided input is numeric, the function should subtract 1 and return the result. If the input is not numeric, decrement should return false.
 
@@ -56,11 +68,20 @@ function increment(input) {
 // }
 
 // review answer
+// function decrement (input) {
+//     if(isNaN(parseInt(input))) {
+//         return false;
+//     }
+//     return input - 1;
+// }
+
 function decrement (input) {
-    if(isNaN(parseInt(input))) {
+    if (isANumber(input)) {
+        return input - 1;
+    } else {
         return false;
     }
-    return input - 1;
+
 }
 // Write a function named getHighestNumber that takes in 3 arguments. If all 3 inputs are numbers or numeric strings, then return the highest number. If any of the 3 inputs is missing or non-numeric, then return false.
 
@@ -79,16 +100,25 @@ function decrement (input) {
 // }
 
 // review answer
-function getHighestNumber (a, b ,c) {
-    if (isNaN(parseInt(a)) ||  isNaN(parseInt(b)) || isNaN(parseInt(c))){
+// function getHighestNumber (a, b ,c) {
+//     if (isNaN(parseInt(a)) ||  isNaN(parseInt(b)) || isNaN(parseInt(c))){
+//         return false;
+//     }
+//     if (a > b && a > c) {
+//         return a;
+//     } else if (b > a && b > c) {
+//         return b;
+//     } else
+//         return c;
+// }
+
+
+function getHighestNumber () {
+    if(isANumber(a) && isANumber(b) && isANumber(c)) {
+        return Math.max(a, b, c);
+    } else {
         return false;
     }
-    if (a > b && a > c) {
-        return a;
-    } else if (b > a && b > c) {
-        return b;
-    } else
-        return c;
 }
 // Define a function named parseNumber that parses (converts) a numeric String and returns it's value as a number, the function should be able to decide if it should be parsing an Integer or a Float value.
 
@@ -107,8 +137,18 @@ function getHighestNumber (a, b ,c) {
 // }
 
 // review answer
-function parseNumber(input) {
-    return parseFloat(input);
+// function parseNumber(input) {
+//     return parseFloat(input);
+// }
+
+function parseNumber (value) {
+    var parseValue = parseFloat(value);
+    if() {
+        return parseFloat(value) {
+    } else
+
+
+    }
 }
 // Write a function named add that takes in two inputs. If both inputs provided are numeric, add will return the sum of both inputs. If one or both inputs is not numeric, add should return false.
 
