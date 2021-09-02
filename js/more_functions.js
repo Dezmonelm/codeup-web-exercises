@@ -78,7 +78,7 @@ console.log();
 // Write a function called first(input) that returns the first character in the provided string.
 //
 function first(input) {
-    return(charAt());
+    return;
 }
 console.log(chatAt());
 //     Write a function called last(input) that returns the last character of a string
