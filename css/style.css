@@ -6,3 +6,17 @@ this file is named "site.css" and is in a directory named "css"
     color: purple;
     text-decoration: underline;
 }
+
+h1 {
+    text-align: center;
+}
+
+h1, h2 {
+    color: seagreen;
+    text-decoration: underline;
+}
+
+body {
+    background-image: url("pexels-ahmad-qime-2859016.jpg") ;
+    background-color: darkorchid;
+}
