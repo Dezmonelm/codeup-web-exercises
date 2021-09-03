@@ -43,10 +43,10 @@ console.log(sayHowdy());
 //
 // Test this function with console.log(addThree(5))
 
-function addThree(Number) {
-    return (Number + 3 )
+function addThree(num) {
+    return (num + 3 )
 }
-console.log(addThree());
+console.log(addThree(num));
 //     Make a function called sayString() which returns the string input passed in.
 //
 // Test this function with console.log(sayString('codeup'))
@@ -78,25 +78,64 @@ console.log();
 // Write a function called first(input) that returns the first character in the provided string.
 //
 function first(input) {
-    return(charAt());
+    return(first.charAt());
 }
-console.log(chatAt());
+console.log(first);
 //     Write a function called last(input) that returns the last character of a string
-//
+
+function last (input) {
+    return last.charAt(last.length(input)-1);
+}
+console.log(last);
+
 // Write a function called rest(input) that returns everything but the first character of a string.
-//
+
+function rest (input) {
+    return rest.slice();
+}
+console.log(rest);
+
 //     Write a function called reverse(input) that takes a string and returns it reversed.
-//
+
+function reverse (input) {
+    return input.splice('').reverse.join('');
+}
+console.log(reverse);
 //     Write a function called isNumeric(input) that takes an input and returns a boolean if the input is numeric.
-//
+
+function isNumeric(input) {
+    return input === 'number';
+}
+
+console.log(isNumeric);
+
 //     Write a function called count(input) that takes in a string and returns the number of characters.
-//
+
+function count(input) {
+    return input.length;
+}
+
+console.log(couunt);
 //     Write a function called add(a, b) that returns the sum of a and b
-//
+
+function add (a, b) {
+    return a + b;
+}
+
+console.log(add);
 // Write a function called subtract(a, b) that return the difference between the two inputs.
-//
+
+subtract (a, b) {
+    return a - b;
+}
+console.log(subtract);
+
 //     Write multiply(a, b) function that returns the product
-//
+
+function multiply (a, b) {
+    return a * b;
+}
+console.log(multiply)
 // Write a divide(numerator, denominator) function that returns a divided by b
 //
 // Write a remainder(number, divisor) function that returns the remainder left over when dividing number by the divisor
