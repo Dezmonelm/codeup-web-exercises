@@ -17,6 +17,44 @@ h1, h2 {
 }
 
 body {
-    background-image: url("pexels-ahmad-qime-2859016.jpg") ;
-    background-color: darkorchid;
+    background-color: red;
+    background-image: url("../images/pexels-miggy-rivera-6141908.jpg");
+
+    height: 1350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+ul {
+    list-style: circle;
+}
+
+ol {
+    list-style-image: initial;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+/* unvisited link (:link) */
+a:link {
+    color: goldenrod;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color: teal;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color: cyan;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color: yellow;
 }
