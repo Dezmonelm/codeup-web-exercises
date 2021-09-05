@@ -1,4 +1,4 @@
-'use strict'
+
 
 console.log('Hello');
 
@@ -7,10 +7,11 @@ console.log('Hello');
 // Make a function called returnTwo() that returns the number 2 when called
 
 function returnTwo(a, b) {
-    var a === 'number';
-    var b === 'number';
+
     return a + b;
 }
+var a = 'number';
+var b = 'number';
 console.log(returnTwo(a, b));
 
 // Test this function with console.log(returnTwo())
@@ -33,9 +34,11 @@ console.log(sayHowdy());
 // Test this function with console.log(returnName())
 
     function returnName(name) {
-        return ('You\'re Dezmone right?');
+        // var name = name.toString();
+        return 'You\'re '  + name + ' right?';
+
     }
-    var name = '';
+
     console.log(returnName(name));
 
 
@@ -43,10 +46,10 @@ console.log(sayHowdy());
 //
 // Test this function with console.log(addThree(5))
 
-function addThree(Number) {
-    return (Number + 3 )
+function addThree(input) {
+    return input + 3;
 }
-console.log(addThree());
+// console.log(addThree());
 //     Make a function called sayString() which returns the string input passed in.
 //
 // Test this function with console.log(sayString('codeup'))
@@ -68,19 +71,21 @@ console.log(identity());
 //     Write a function called getRandomNumber(min, max) that returns a random number between min and max values sent to that function call.
 
 function getRandomNUmber(min, max) {
-    var min = Number;
-    var max = NUmber;
-    return Math.Random() * (max - min) + min;
+
+    return parseInt(Math.random() * (max - min) + min);
 }
-console.log();
+var min = prompt('give a number')
+var max = prompt('give a number')
+
+console.log(getRandomNUmber(min, max));
 
 
 // Write a function called first(input) that returns the first character in the provided string.
 //
-function first(input) {
-    return;
-}
-console.log(chatAt());
+// function first(input) {
+//     return input;
+// }
+// console.log(chatAt());
 //     Write a function called last(input) that returns the last character of a string
 //
 // Write a function called rest(input) that returns everything but the first character of a string.
