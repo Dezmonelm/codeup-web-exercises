@@ -7,11 +7,11 @@ console.log('Hello');
 // Make a function called returnTwo() that returns the number 2 when called
 
 function returnTwo(a, b) {
-    var a = 1;
-    var b = 1;
+    var a === 'number';
+    var b === 'number';
     return a + b;
 }
-console.log(returnTwo());
+console.log(returnTwo(a, b));
 
 // Test this function with console.log(returnTwo())
 //

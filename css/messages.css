@@ -8,33 +8,37 @@ body, html {
 
 .message {
     width: 90%;
-    padding: 1em;
-    margin: 1em;
+    padding: .5em;
+    margin: .5em;
     border: 1px solid lightgrey;
     border-spacing: 1em;
-    border-radius: 15px;;
+    border-radius: 5px;;
 }
 
 .message-info {
     background-color: #c6d7f6;
     opacity: initial;
     color: #47429b;
+    padding: 5px;
 }
 
 .message-success {
     background-color: #c7ead2;
     opacity: initial;
     color: #317746;
+    padding: 5px;
 }
 
 .message-warning {
     background-color: #f2f1c2;
     opacity: initial;
     color: #9b8b3a;
+    padding: 5px;
 }
 
 .message-error {
     background-color: #f1cbcf;
     opacity: initial;
     color: #8e3446;
+    padding: 5px;
 }
