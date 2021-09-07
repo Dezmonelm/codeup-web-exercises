@@ -70,22 +70,22 @@ function identity(input) {
 console.log(identity());
 //     Write a function called getRandomNumber(min, max) that returns a random number between min and max values sent to that function call.
 
-function getRandomNUmber(min, max) {
-
-    return parseInt(Math.random() * (max - min) + min);
-}
-var min = prompt('give a number')
-var max = prompt('give a number')
-
-console.log(getRandomNUmber(min, max));
+// function getRandomNUmber(min, max) {
+//
+//     return parseInt(Math.random() * (max - min) + min);
+// }
+// var min = prompt('give a number')
+// var max = prompt('give a number')
+//
+// console.log(getRandomNUmber(min, max));
 
 
 // Write a function called first(input) that returns the first character in the provided string.
 //
-// function first(input) {
-//     return input;
-// }
-// console.log(chatAt());
+function first(input) {
+    return input = {0};
+}
+console.log();
 //     Write a function called last(input) that returns the last character of a string
 //
 // Write a function called rest(input) that returns everything but the first character of a string.
@@ -111,3 +111,6 @@ console.log(getRandomNUmber(min, max));
 //     Write a function called sumOfSquares(a, b) that uses only your add() function and your square function and not + or * operators
 //
 // Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
+function doMath(operator, a, b) {
+    return
+}
