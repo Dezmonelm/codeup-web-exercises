@@ -70,10 +70,10 @@ function identity(input) {
 console.log(identity());
 //     Write a function called getRandomNumber(min, max) that returns a random number between min and max values sent to that function call.
 
-// function getRandomNUmber(min, max) {
-//
-//     return parseInt(Math.random() * (max - min) + min);
-// }
+function getRandomNUmber(min, max) {
+
+    return parseInt(Math.random() * (max - min) + min);
+}
 // var min = prompt('give a number')
 // var max = prompt('give a number')
 //
@@ -82,10 +82,10 @@ console.log(identity());
 
 // Write a function called first(input) that returns the first character in the provided string.
 //
-function first(input) {
-    return input = {0};
-}
-console.log();
+// function first(input) {
+//     return input = {0};
+// }
+// console.log();
 //     Write a function called last(input) that returns the last character of a string
 //
 // Write a function called rest(input) that returns everything but the first character of a string.
