@@ -100,17 +100,7 @@ function decrement (input) {
 // }
 
 // review answer
-// function getHighestNumber (a, b ,c) {
-//     if (isNaN(parseInt(a)) ||  isNaN(parseInt(b)) || isNaN(parseInt(c))){
-//         return false;
-//     }
-//     if (a > b && a > c) {
-//         return a;
-//     } else if (b > a && b > c) {
-//         return b;
-//     } else
-//         return c;
-// }
+// 
 
 
 function getHighestNumber () {
