@@ -187,8 +187,10 @@ section:nth-of-type(6) {
     width: 3em;
     height: 3em;
     justify-content: space-evenly;
+    align-items: ;
 }
 
 .grey-box:nth-of-type(odd) {
     height: 4em;
 }
+
