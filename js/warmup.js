@@ -15,3 +15,25 @@ function calculateDogAge(puppyAge, conversionNum) {
     return 'hello there! This little doggy is ' + humanAge;
 }
 
+// Taco Tuesday
+// array of strings that orders food
+//function named tacoTuesday that returns TRUE with the word 'taco' and false if not
+
+// var notTacos = []
+var tacoTypes = ['Seafood taco', 'Veggie taco', 'beef taco', 'Chicken taco', 'Steak taco']
+// function tacoTuesday (input) {
+//     if(tacoTypes)
+//     return true;
+// } else {
+//     return false;
+// }
+
+function tacoTuesday (arr) {
+    for(var i = 0; i < arr.length; i++) {
+
+        if(arr[i].includes('taco')) {
+            return true;
+        }
+    }
+    return false;
+}

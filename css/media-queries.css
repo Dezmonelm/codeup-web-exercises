@@ -1,0 +1,29 @@
+p {
+    color: cornflowerblue;
+    font-size: 30px;
+}
+@media screen and (min-width:576px) {
+p {
+    font-size: 3em;
+    text-decoration: rebeccapurple;
+    }
+body {
+align-self: center;
+}
+
+
+@media screen and (min-width:768px) {
+h2 {
+    color: teal;
+    font-size: 1em;
+    align-content: center;
+}
+}
+
+@media screen and (min-width:992px) {
+
+}
+
+@media screen and (min-width:1200px) {
+
+}

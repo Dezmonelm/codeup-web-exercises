@@ -22,7 +22,7 @@ nav a {
     color: #1e1e1e;
     font-family: Verdana;
     display: inline-block; /* inline-block to increase clickable area beyond the text */
-    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+    padding: 1.85em .5em; /* increases clickable area of anchor tags on all sides by 1em */
 }
 nav a:hover {
     background: #038eff;
@@ -41,6 +41,7 @@ div {
     align-items: center;
  }
  h3 {
+     position: relative;
      display: flex;
      justify-content: center;
      align-self: center;
@@ -52,5 +53,7 @@ div {
      align-items: center;
      padding: 5px;
      align-content: center;
+     font-size: 3em;
+     padding: .2em 0;
 
  }
