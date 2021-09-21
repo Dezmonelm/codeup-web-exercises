@@ -35,6 +35,14 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+
+
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button>
+    <button id="btn3">Button 3</button>
+    <button id="btn4">Button 4</button>
+
+
 <script>
     (function () {
         "use strict";
@@ -89,7 +97,49 @@
         }
 
             // subParagraphs[0].innerText = 'Mission Accomplished!';
+
+        var button1 = document.getElementById('btn1');
+        var button2 = document.getElementById('btn2');
+        var button3 = document.getElementById('btn3');
+        var button4 = document.getElementById('btn4');
+
+       button1.addEventListener("mouseover", function(){
+           var mainHeader = document.getElementById('main-header');
+           mainHeader.innerText = 'GOTCHA!'
+       })
+
+        button2.addEventListener("click", function (){
+            var subHeader = document.getElementById('sub-header');
+            subHeader.style.backgroundColor = 'red';
+
+        })
+        button3.addEventListener("dblclick", function () {
+            for(var i = 0; i < subParagraphs.length; i++) {
+                if (i % 2 === 0) {
+                    subParagraphs[i].innerHTML = 'OMG Back at it again!';
+                }
+            }
+        })
+
+        button4.addEventListener("click", function (){
+            var listItems = document.getElementsByTagName('li');
+
+            for (var i = 0; i < listItems.length; i++) {
+                if (i === 4) {
+                    listItems[i].style.fontFamily = 'cursive';
+                }
+                var dbid = listItems[i].getAttribute('data-dbid');
+                if (dbid === '1') {
+
+
+                    listItems[i].style.color = 'blue';
+                    console.log(dbid);
+                }
+            }
+        })
+
     })();
+
 </script>
 </body>
 </html>
