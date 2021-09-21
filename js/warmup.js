@@ -72,10 +72,35 @@ function tacoTuesday (arr) {
 // }
 //
 // let display = setInterval(showTime, 5000);
+//
+// function greet() {
+//  console.log('Hello World!');
+// }
+// var delayedGreeting =window.setTimeout(greet, 3000);
+//
+// window.clearTimeout(delayedGreeting);
 
-function greet() {
- console.log('Hello World!');
+//    BOM DONE!
+
+//function named logEvens
+//passes arument to print only even numbers
+// console.log()
+
+// function logEvens (x) {
+//     if(x % 2 == 0) {
+//         console.log(true);
+//
+//     } else {
+//         console.log(false);
+//
+//     }
+// }
+
+function logEvens (input) {
+    for (var x = 0; x <= input; x++) {
+        if(x % 2 === 0) {
+            console.log(x);
+        }
+
+    }
 }
-var delayedGreeting =window.setTimeout(greet, 3000);
-
-window.clearTimeout(delayedGreeting);
