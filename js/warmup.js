@@ -104,3 +104,18 @@ function logEvens (input) {
 
     }
 }
+
+//function named logNum()
+//accepts up to a number
+//function tells whether num is even or odd
+
+function logNuM(input) {
+    for(var x = 1; x <= input; x++) {
+        if(x % 2 === 0) {
+            console.log(x + ' even');
+        } else if (x % 2 !== 0){
+            console.log(x + ' odd');
+        }
+    }
+    console.log(x)
+}
