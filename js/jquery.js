@@ -7,19 +7,36 @@ $(document).ready(function() {
 });
 
 
-var test = $('#item').html();
-alert(test);
+// var test = $('#item').html();
+// alert(test);
+//
+// test = $('#stuff').html();
+// alert(test);
+//
+//
+// $('.codeup').css('border', '1px solid red');
+//
+// $('li').css('font-size', '20px');
+//
+// $('h1').css('background-color', 'yellow');
+// $('p').css('background-color', 'yellow');
+// $('li').css('background-color', 'yellow');
+//
+// $('p', 'h1', 'li').css('color', 'orange')
 
-test = $('#stuff').html();
-alert(test);
 
 
-$('.codeup').css('border', '1px solid red');
+$('h1').click(function (){
+    $('h1').css('background-color', 'red');
+});
 
-$('li').css('font-size', '20px');
+$('p').dblclick(function (){
+    $('p').css('font-size', '18px');
+});
 
-$('h1').css('background-color', 'yellow');
-$('p').css('background-color', 'yellow');
-$('li').css('background-color', 'yellow');
-
-$('p', 'h1', 'li').css('color', 'orange')
+$('li').hover(function (){
+    $('li').css('color', 'red')
+},
+    function (){
+        $('li').css('color', 'black');
+})
