@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 
 $('h1').click(function (){
-    $('h1').css('background-color', 'red');
+    $(this).css('background-color', 'red');
 });
 
 $('p').dblclick(function (){
@@ -35,8 +35,11 @@ $('p').dblclick(function (){
 });
 
 $('li').hover(function (){
-    $('li').css('color', 'red')
+    $(this).css('color', 'red')
 },
     function (){
-        $('li').css('color', 'black');
+        $(this).css('color', 'black');
 })
+
+var funColor = document.getElementById('item');
+funColor.addEventListener()
