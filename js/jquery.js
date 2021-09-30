@@ -26,23 +26,26 @@
 
 
 
-$('h1').click(function (){
-    $(this).css('background-color', 'red');
-});
+// $('h1').click(function (){
+//     $(this).css('background-color', 'red');
+// });
+//
+// $('p').dblclick(function (){
+//     $('p').css('font-size', '18px');
+// });
+//
+// $('li').hover(function (){
+//     $(this).css('color', 'red')
+// },
+//     function (){
+//         $(this).css('color', 'black');
+// })
 
-$('p').dblclick(function (){
-    $('p').css('font-size', '18px');
-});
-
-$('li').hover(function (){
-    $(this).css('color', 'red')
-},
-    function (){
-        $(this).css('color', 'black');
-})
 
 
-
+// var sound = new audio('audio/xxxxx.mp3')
+//use the variable tp target sound
+var sliceImg = 
 
 $(document).ready(function() {
     var userInput = prompt('You have to follow directions! Do you understand? (yes/no)')
@@ -53,7 +56,7 @@ $(document).ready(function() {
         // add sound
         alert('Let\'s begin!')
         explode.click(function () {
-            $('.fw-bold').css('color', 'green')
+            $('command1').css('color', 'green')
         })
 
         console.log('make a sound');
@@ -68,16 +71,4 @@ $(document).ready(function() {
 
 });
 
-// function userSearch(e) {
-//     var userKeyStroke = userInput.value;
-//     userKeyStroke = userKeyStroke.toLowerCase();
-//     var searchedCoffees = [];
-//     updateCoffees(e).forEach(function (coffee) {
-//         if (coffee.name.toLowerCase().includes(userKeyStroke)) {
-//             searchedCoffees.push(coffee);
-//         }
-//     });
-//
-//     tbody.innerHTML = renderCoffees(searchedCoffees);
-//
-// }
+
