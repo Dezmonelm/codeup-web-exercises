@@ -43,7 +43,7 @@
 
 
 
-// var sound = new audio('audio/xxxxx.mp3')
+var sound = new audio('audio/')
 //use the variable tp target sound
 var sliceImg = 
 
@@ -56,8 +56,8 @@ $(document).ready(function() {
         // add sound
         alert('Let\'s begin!')
         explode.click(function () {
-            $('command1').css('color', 'green')
-        })
+            $('command1').css('color', 'green');
+        });
 
         console.log('make a sound');
     }
