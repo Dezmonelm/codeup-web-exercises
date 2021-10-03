@@ -9,7 +9,7 @@
     Follow the instructions for a cool ending.
 </p>
 <div>
-<!--    <form>-->
+    <form>
         <div>
             <label class="fw-bold" for="diffLevel">Difficulty</label>
             <div>
@@ -27,9 +27,9 @@
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            <button class="col-6 btn-color" type="submit">Submit</button>
+            <button class="col-6 btn-color" id="testField" type="submit">Submit</button>
         </div>
-<!--    </form>-->
+    </form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -37,9 +37,29 @@
 <script>
     "use strict";
 
+    <!--Allow the user to enter the Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter" (the return key)-->
     $(document).keyup(function(event){
+        var userInput = '';
+        var konamiCode = '↑ ↑ ↓ ↓ ← → ← → b a enter';
+        $('#textField').keyup(function () {
+            alert('up');
+        });
         console.log(event.keyCode);
+        console.log(keyup);
     });
+
+    <!--Find the matching sequence using the code above for each key in the Konami Code.-->
+
+
+    <!--Don't worry about capital a or b just check for lowercase.-->
+
+
+    <!--After the correct Konami Code sequence is inputted, have the script alert the user: "You have added 30 lives! Other ideas:-->
+    <!--Change the background screen.-->
+    <!--Play a sound.-->
+    <!--Be creative!-->
+    <!--Happy Playing.-->
 </script>
+
 </body>
 </html>

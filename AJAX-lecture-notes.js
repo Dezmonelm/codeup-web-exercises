@@ -13,10 +13,10 @@ var obj = {
 
 
 // Notice that the largest difference is the keys are strings (in double quotes).
-//
-// console.log(obj.key);
-// console.log(obj.number);
-// console.log(obj.arr);
+
+console.log(obj.key);
+console.log(obj.number);
+console.log(obj.arr);
 
 // We still interact with this object just the same.
 
@@ -24,29 +24,36 @@ var obj = {
 // .ajax :: our first API request
 
 // // .ajax(url) - without any OPTIONS, defaults to a GET request:
-// $.ajax("putHookbinLinkHere").done(function(data){
+// $.ajax("https://hookb.in/W1N6VzLbQOTYplzzplLB").done(function(data){
 //     console.log(data);
 // })
 
 // .ajax also has a wealth of options we can use in our efforts as programmers:
 // This example: Send out a POST request with some DATA
-// $.ajax("",
-//     {
-//         type: "POST",
-//         data: {
-//             cohort: "Quasar",
-//             type: "Web Development",
-//             yearStarted: 2021
-//         }
-//     })
+$.ajax("https://hookb.in/W1N6VzLbQOTYplzzplLB",//URL is still the first argument
+    {
+        type: "POST",
+        data: {
+            cohort: "Quasar",
+            type: "Web Development",
+            yearStarted: 2021,
+            name: "Dezmone Musgrove",
+            location: "Georgia",
+            cool: 100,
+            fly: "As a kite!"
+        }
+    });
 
 //TODO: Before we move on: Let's GET a random recipe together :)
 // Help me finish the following AJAX method to console.log the data that comes back!
 // https://www.themealdb.com/ < main website url
 // https://www.themealdb.com/api.php < api documentation main page (hint: looks like there's some kind of URL beneath the 'lookup a single random meal' heading. . and our AJAX method is looking for a url)
+//
 
-// $.ajax("url").done(function(data){
-// //do something with data here})
+$.ajax("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data){
+    console.log('hello');
+    console.log(data);
+})
 
 // ~*~ working with responses ~*~
 
@@ -56,23 +63,33 @@ var obj = {
 //
 // $(document).ready(function(){
 //     console.time("recipeAPI");
+//     console.time("javascriptItself");
+//     console.time("hookbinCompare");
+//
 //     var randomFact = $.ajax("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data){
-//         console.log(randomFact)
+//         // console.log(randomFact);
+//
+//
 //     });
-//     console.timeEnd("recipeAPI");
-// })
+//     $.ajax("www.themealdb.com/api/json/v1/1/random.php").done(function(data){
+//         console.timeEnd("hookbin");
+//     });
+//
+// });
 
 // Different MS = different response times BACK from our API
 
+// Handling AJAX responses
+
 // .done - when our process is complete [done], do the following [callback function]
 //
-// $.ajax("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data, status, jqXhr){
-//     alert("AJAX status : " + status);
-//
-//     console.log("Data returned from server:");
-//     console.log(data);
-//     // console.log(jqXhr);
-// });
+$.ajax("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data, status, jqXhr){
+    alert("AJAX status : " + status);
+
+    console.log("Data returned from server:");
+    console.log(data);
+    // console.log(jqXhr);
+});
 
 // Above, we've used two parameters in our .done callback function: status and data for different purposes
 
@@ -84,37 +101,49 @@ var obj = {
 // .always = always do this stuff (callback function)
 
 // In action:
-// $.ajax("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data, status, jqXhr) {
-//     alert("Everything went great! Check out the server's response in the console.");
-//     console.log(data);
-// }).fail(function(jqXhr, status, error) {
-//     alert("There was an error! Check the console for details");
-//     console.log("Response status: " + status);
-//     console.log("Error object: " + error);
-// }).always(function() {
-//     alert("This function always runs!");
-// });
+$.ajax("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data, status, jqXhr) {
+    alert("Everything went great! Check out the server's response in the console.");
+    console.log(data);
+}).fail(function(jqXhr, status, error) {
+    alert("There was an error! Check the console for details");
+    console.log("Response status: " + status);
+    console.log("Error object: " + error);
+}).always(function() {
+    alert("This function always runs!");
+});
 
 //Notice that .done and .fail will run one or the other dependent on the outcome, they are exclusive to each other
 
-
+//.post shorthand
+//
+// $.post("https://hookb.in/W1N6VzLbQOTYplzzplLB",//URL is still the first argument
+//     {
+//              cohort: "Quasar",
+//             type: "Web Development",
+//             yearStarted: 2021,
+//             name: "Dezmone Musgrove",
+//             location: "Georgia",
+//             cool: 100,
+//             fly: "As a kite!"
+//         }
+//     }
 // // Putting our ideas into some motion:
 // //Our user wants to CLICK A BUTTON and have a RANDOM RECIPE show to them in the view
 // //
-// $("#rando").click(function(e){
-//     e.preventDefault();
-//     $.get("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data, status)
-// {
-//     console.log(data.meals[0]) // Stepping into our data. . data > first level ["meals"] at the 0 index > I can see many object properties to get info from
-//
-//     $("#recipeContainer").html("<h1>" + data.meals[0].strMeal + "</h1>"
-//         + "<span>" + "Category: " + data.meals[0].strCategory + "</span><br>"
-//         + "<img src='" + data.meals[0].strMealThumb + "'>"
-//         + "<h4>Instructions</h4>"
-//         + "<p>" + data.meals[0].strInstructions + "</p>")
-//
-//     })
-// })
+$("#rando").click(function(e){
+    e.preventDefault();
+    $.get("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data, status)
+{
+    console.log(data.meals[0]) // Stepping into our data. . data > first level ["meals"] at the 0 index > I can see many object properties to get info from
+
+    $("#recipeContainer").html("<h1>" + data.meals[0].strMeal + "</h1>"
+        + "<span>" + "Category: " + data.meals[0].strCategory + "</span><br>"
+        + "<img src='" + data.meals[0].strMealThumb + "'>"
+        + "<h4>Instructions</h4>"
+        + "<p>" + data.meals[0].strInstructions + "</p>")
+
+    })
+})
 //
 //
 // //Our user wants to SEARCH IN A FIELD and have the most RELEVANT RECIPE shown to them in the view

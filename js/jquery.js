@@ -12,17 +12,17 @@
 //
 // test = $('#stuff').html();
 // alert(test);
-//
+
 //
 // $('.codeup').css('border', '1px solid red');
 //
 // $('li').css('font-size', '20px');
 //
-// $('h1').css('background-color', 'yellow');
+// $('h1').css('background-color', 'pink');
 // $('p').css('background-color', 'yellow');
-// $('li').css('background-color', 'yellow');
+// $('li').css('background-color', 'lightBlue');
 //
-// $('p', 'h1', 'li').css('color', 'orange')
+// $('p', 'h1', 'li').css('color', 'orange');
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-var sound = new audio('audio/')
+// var sound = new audio('/audio/')
 //use the variable tp target sound
 var sliceImg = 
 
