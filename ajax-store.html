@@ -28,27 +28,23 @@
     $.ajax("./data/inventory.json").done(function (data, status){
         console.log(data);
         // TODO: Take the data from inventory.json and append it to the products table
-        $.ajax("./data/inventory.json", {
-            type: "POST",
-            data: {
-                name:     "John",
-                location: "Boston"
-            }
-        });
-        $('#insertProducts').html('<thread>' + '<tr>' +
-            '<th>' + + '</th>' +
-            '<th>' + + '</th>' +
-            '<th>' + + '</th>' +
-            '<th>' + + '</th>'
-            + '</tr>' + '</thread>').html();
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
 
-    } );
+      data.forEach(function (item) {
+          var html = '<tr>' +
+          '<th>' + item.title + '</th>' +
+          '<th>' + item.quantity + '</th>' +
+          '<th>' + item.price + '</th>' +
+          '<th>' + item.categories + '</th>'
+          + '</tr>'
+
+          //       HINT: You will want to target #insertProducts for your new HTML elements
+          $('#insertProducts').append(html);
+      });
+    });
 
 
-
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
 })();
 </script>
 

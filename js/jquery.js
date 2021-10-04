@@ -55,7 +55,7 @@ $(document).ready(function() {
     if(userInput === 'yes') {
         // add sound
         alert('Let\'s begin!');
-        userInput = prompt('Enter the konami code: ↑ ↑ ↓ ↓ ← → ← → b a enter');
+        userInput = prompt('Enter the konami code: "↑ ↑ ↓ ↓ ← → ← →" b a enter');
         console.log(userInput);
         var konamiCode = 'ArrowUp ArrowUp ArrowDown ArrowDown Arrowleft ArrowRight Arrowleft ArrowRight b a Enter';
            if (userInput === 'yes'){
