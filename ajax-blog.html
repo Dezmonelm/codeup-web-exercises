@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Categories</th>
+        <th>Date</th>
+
+    </tr>
+    </thead>
+    <div  class="div">
+    <tbody id="posts"></tbody>
+    </div>
+</table>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    (function () {
+        'use strict';
+        // TODO: Create an AJAX GET request for the file under data/blog.json
+$.ajax("./data/blog.json").done(function (data, status) {
+    console.log(data);
+    // Use Ajax to load the contents of blog.json and add the data from it to your #posts div.
+
+   data.forEach(function (item) {
+       var html = '<tr>' +
+           '<th>' + item.title + '</th>' +
+           '<th>' + item.content + '</th>' +
+           '<th>' + item.categories + '</th>' +
+           '<th>' + item.date + '</th>' +
+           + '</tr>'
+
+       $('#posts').append(html);
+   });
+
+    //     Add additional entries to blog.json and make sure your changes are reflected on the page.
+var textBox = $('.div').prepend('<textarea>');
+
+
+});
+
+
+    })();
+</script>
+</body>
+</html>
