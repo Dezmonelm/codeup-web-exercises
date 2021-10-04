@@ -61,7 +61,7 @@ $(document).ready(function() {
         if (userInput === 'yes'){
             $('userInput').keyup(function (event) {
                 event.preventDefault();
-                console.log('userInput');
+                console.log(userInput);
                 console.log('mmhhmm');
             });
 
