@@ -57,12 +57,17 @@ $(document).ready(function() {
         alert('Let\'s begin!');
         userInput = prompt('Enter the konami code: ↑ ↑ ↓ ↓ ← → ← → b a enter');
         console.log(userInput);
-        var konamiCode = '↑ ↑ ↓ ↓ ← → ← → b a enter';
-        if (userInput === 'yes'){
-            $('userInput').keyup(function (event) {
-                event.preventDefault();
+        var konamiCode = 'ArrowUp ArrowUp ArrowDown ArrowDown Arrowleft ArrowRight Arrowleft ArrowRight b a Enter';
+           if (userInput === 'yes'){
+            userInput = '';
+            $('body').keyup(function (event) {
+                console.log(event.key);
+                if(userInput === konamiCode) {
+                    console.log('cool thing');
+                }
+                // event.preventDefault();
+                userInput = userInput + event.key;
                 console.log(userInput);
-                console.log('mmhhmm');
             });
 
         }

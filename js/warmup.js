@@ -119,3 +119,20 @@ function logNuM(input) {
     }
     console.log(x)
 }
+
+// Create html with a paragrah with some words in it.
+// Bring in jquery to
+$(document).ready(function () {
+
+    // When: clicked
+    $('p').click(function (event) {
+        event.preventDefault();
+        console.log(event);
+
+        // You see: alert
+        alert('I think I did it...');
+
+        console.log(click());
+    });
+
+});
