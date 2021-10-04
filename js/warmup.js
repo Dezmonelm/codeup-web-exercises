@@ -130,9 +130,13 @@ $(document).ready(function () {
         console.log(event);
 
         // You see: alert
-        alert('I think I did it...');
+        // MINE:
+        // alert('I think I did it...');
+        // console.log(alert);
 
-        console.log(click());
+        // You see: alert <p>
+        // Kenneth:
+        alert($(this).text());
     });
 
 });
