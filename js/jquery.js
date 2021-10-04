@@ -22,7 +22,7 @@
 // $('p').css('background-color', 'yellow');
 // $('li').css('background-color', 'lightBlue');
 //
-// $('p', 'h1', 'li').css('color', 'orange');
+// $('p, h1, li').css('color', 'orange');
 
 
 
@@ -45,18 +45,29 @@
 
 // var sound = new audio('/audio/')
 //use the variable tp target sound
-var sliceImg = 
-
+var sliceImg = null;
+var bombSound = null;
 $(document).ready(function() {
-    var userInput = prompt('You have to follow directions! Do you understand? (yes/no)')
+    var userInput = prompt('You have to follow directions! Do you understand? (yes/no)');
     userInput = userInput.toLowerCase();
     var explode = $('button');
     console.log(userInput);
     if(userInput === 'yes') {
         // add sound
-        alert('Let\'s begin!')
+        alert('Let\'s begin!');
+        userInput = prompt('Enter the konami code: ↑ ↑ ↓ ↓ ← → ← → b a enter');
+        console.log(userInput);
+        var konamiCode = '↑ ↑ ↓ ↓ ← → ← → b a enter';
+        if (userInput === 'yes'){
+            $('userInput').keyup(function (event) {
+                event.preventDefault();
+                console.log('userInput');
+                console.log('mmhhmm');
+            });
+
+        }
         explode.click(function () {
-            $('command1').css('color', 'green');
+            $('#command1').css('color', 'green');
         });
 
         console.log('make a sound');
@@ -68,6 +79,17 @@ $(document).ready(function() {
             $('.fw-bold').css('color', 'red')
         })
     }
+    // event.preventDefault;
+
+    // var userInput = $('#input');
+    // userInput = userInput.toLowerCase();
+    //
+    // $('#input').keyup(function (e) {
+    //     e.preventDefault;
+    //     alert('up');
+    //     console.log(userInput);
+    // });
+    // console.log(event.keyCode);
 
 });
 

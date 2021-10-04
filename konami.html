@@ -11,7 +11,7 @@
 <div>
     <form>
         <div>
-            <label class="fw-bold" for="diffLevel">Difficulty</label>
+            <label class="fw-bold" id="diffLevel">Difficulty</label>
             <div>
                 <select class="col-12">
                     <option>Easy</option>
@@ -21,9 +21,9 @@
             </div>
         </div>
         <div>
-            <label class="fw-bold" for="command1">Type: 'music'</label>
+            <label class="fw-bold" id="command1">Type: 'music'</label>
             <div>
-                <input class="col-12 mb-1" type="search" placeholder="DO NOT SUBMIT!!!">
+                <input class="col-12 mb-1" type="search" id="input" placeholder="DO NOT SUBMIT!!!">
             </div>
         </div>
         <div class="d-flex justify-content-center">
@@ -38,15 +38,20 @@
     "use strict";
 
     <!--Allow the user to enter the Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter" (the return key)-->
-    $(document).keyup(function(event){
-        var userInput = '';
-        var konamiCode = '↑ ↑ ↓ ↓ ← → ← → b a enter';
-        $('#textField').keyup(function () {
-            alert('up');
-        });
-        console.log(event.keyCode);
-        console.log(keyup);
-    });
+    // $(document).ready(function(event){
+    //     event.preventDefault;
+    //     prompt('Enter the konami code')
+    //     // var userInput = $('#input');
+    //     // userInput = userInput.toLowerCase();
+    //     var konamiCode = '↑ ↑ ↓ ↓ ← → ← → b a enter';
+    //     $('#input').keyup(function (e) {
+    //         e.preventDefault;
+    //         alert('up');
+    //         console.log(userInput);
+    //     });
+    //     console.log(event.keyCode);
+    //     // console.log(keyup);
+    // });
 
     <!--Find the matching sequence using the code above for each key in the Konami Code.-->
 
