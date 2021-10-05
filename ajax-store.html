@@ -25,6 +25,7 @@
 (function() {
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
+
     $.ajax("./data/inventory.json").done(function (data, status){
         console.log(data);
         // TODO: Take the data from inventory.json and append it to the products table
@@ -36,15 +37,18 @@
           '<th>' + item.title + '</th>' +
           '<th>' + item.quantity + '</th>' +
           '<th>' + item.price + '</th>' +
-          '<th>' + item.categories + '</th>'
+          '<th>' + item.categories.join(', ') + '</th>'
           + '</tr>'
+          // return html;
 
           //       HINT: You will want to target #insertProducts for your new HTML elements
           $('#insertProducts').append(html);
+
       });
+        // ('#insertProducts').append(html);
     });
 
-
+$
 })();
 </script>
 

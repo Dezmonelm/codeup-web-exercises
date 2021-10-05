@@ -33,19 +33,26 @@ $.ajax("./data/blog.json").done(function (data, status) {
     // Use Ajax to load the contents of blog.json and add the data from it to your #posts div.
 
    data.forEach(function (item) {
-       var html = '<tr>' +
-           '<th>' + item.title + '</th>' +
-           '<th>' + item.content + '</th>' +
-           '<th>' + item.categories + '</th>' +
+       var html = '<div>' +
+           '<h3>' + item.title + '</h3>' +
+           '<p>' + item.content + '</p>' +
+           '<div>' + item.categories.join(', ') + '</div>' +
            '<th>' + item.date + '</th>' +
-           + '</tr>'
+           + '</div>'
 
        $('#posts').append(html);
    });
 
     //     Add additional entries to blog.json and make sure your changes are reflected on the page.
-var textBox = $('.div').prepend('<textarea>');
-
+var textBox = $('.div').prepend('<button id="refresh">Refresh Button My Guy</button>');
+// click button to reload page
+$('#refresh').click(function () {
+    location.reload()
+});
+    console.log(textBox);
+    var refreshButton = $('#refresh').html();
+    // alert(refreshButton);
+    console.log(refreshButton);
 
 });
 
