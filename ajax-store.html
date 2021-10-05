@@ -17,8 +17,9 @@
         </tr>
     </thead>
     <tbody id="insertProducts"></tbody>
-</table>
 
+</table>
+<div class="smartButton"></div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
@@ -37,8 +38,8 @@
           '<th>' + item.title + '</th>' +
           '<th>' + item.quantity + '</th>' +
           '<th>' + item.price + '</th>' +
-          '<th>' + item.categories.join(', ') + '</th>'
-          + '</tr>'
+          '<th>' + item.categories.join(', ') + '</th>' +
+              '</tr>'
           // return html;
 
           //       HINT: You will want to target #insertProducts for your new HTML elements
@@ -46,9 +47,19 @@
 
       });
         // ('#insertProducts').append(html);
+
+    var textBox = $('.smartButton').prepend('<button id="refresh">Refresh Button My Guy</button>');
+// click button to reload page
+        $('#refresh').click(function () {
+            location.reload()
+        });
+        console.log(textBox);
+        var refreshButton = $('#refresh').html();
+        // alert(refreshButton);
+        console.log(refreshButton);
     });
 
-$
+
 })();
 </script>
 
