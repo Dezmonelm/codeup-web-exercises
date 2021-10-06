@@ -34,18 +34,19 @@
     const map = new mapboxgl.Map(
     {
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
+        style: 'mapbox://styles/mapbox/navigation-day-v1',
         center: [-84.3785309, 33.7860394],
-        zoom: 10
+        zoom: 9
     }
 )
 
     //     Can the zoom be changed programmatically after the initial map is drawn?
     var zoomWheel = map.scrollZoom.setZoomRate(1 / 25);
+    var rotate = map.dragRotate.enable();
 
     //     Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
     var marker = new mapboxgl.Marker({
-        color : 'lightBlue',
+        color : '#01FF70',
 
 
 
@@ -55,12 +56,29 @@
 
     //     Create a popup with the name of the restaurant.
     //     Make sure the info window does not display until the marker has been clicked on.
-
+    var restaurantPop = new mapboxgl.Popup()
+        .setLngLat([-84.3785309, 33.7860394])
+        .setHTML('<h1><em>The Nook</em></h1>')
+        .addTo(map);
+    var close = restaurantPop.closeButton.true();
+    // theNookPop.css({'border-radius' : '25px'})
 
     //     Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.
+    var fogomarker = new mapboxgl.Marker({color : 'orange',})
+        .setLngLat([-84.369545, 33.840347])
+        .addTo(map);
 
-
-
+// ---------------------------------
+    $('body').css({
+        'width' : '100vw',
+        'height' : '100vh',
+        'background-image': 'url(images/The-Nook.jpeg)',
+        'background-repeat': 'no-repeat',
+        'background-size' : 'cover',
+        'opacity' : '0.91',
+        'background-attachment' : 'fixed'
+    }).html();
+    // S('dd').css('border', '4px solid black');
         })();
 </script>
 
