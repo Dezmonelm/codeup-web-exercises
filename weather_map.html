@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container d-flex flex justify-content-between"></div>
+<!-- JavaScript Bundle with Popper -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+<script src="keys.js"></script>
+<script>
+
+    "use strict";
+
+    $(document).ready(function () {
+
+        // <!--Using HTML, CSS, jQuery, AJAX, and the OpenWeatherMap API, start by showing the current conditions for city you live in on your page.-->
+
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: openWeatherKey,
+            q: "Atlanta, US",
+            lat: 33.749,
+            lon: -84.388,
+            units: "imperial"
+
+
+        }).done(function (data) {
+            console.log(data.list);
+// <!--Update your layout and AJAX request(s) to display a five day forecast for the city you live in that looks like the screenshot below.-->
+            for (var x = 0; x <= data.list.length; x += 8) {
+                console.log(x);
+                // var timeAndDate = data.list[x].dt_txt;
+                var timeAndDate = new Date()
+                console.log(timeAndDate);
+                var humid = data.list[x].main.humidity;
+                var temp = data.list[x].main.temp;
+                var image = "http://openweathermap.org/img/w/" + data.list[x].weather[0].icon + ".png"
+                console.log(image);
+                var html = '<div class="card bg-info" style="width: 10rem;">' +
+                    // '<di class="text-center text-success">' + '<strong>' + timeAndDate + '</strong>' +
+                    '<di class="text-center text-success">' + '<strong>' + timeAndDate + '</strong>' +
+// <!--If you want to add the icons the URLs for OpenWeatherMap's icons are formatted like: http://openweathermap.org/img/w/[icon].png where [icon] comes from the API response.-->
+                    '<img src="' + image + '" class="card-img-top" alt=".0.">' +
+                    '<div class="card-body text-dark">' +
+                    '<p class="card-title">' + 'Temp:' + '<br>' + temp + '</p>' +
+                    '<p class="card-text">' + 'Humidity:' + '<br>' + humid + '</p>' +
+                    '<a href="#" class="btn btn-primary">Go</a>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+
+                // $('.car-img-top').attr('src', image)
+                $('.container').append(html);
+            }
+
+
+        });
+
+
+
+// <!--Refer to your Mapbox API exercise. Recreate the map below your 5 day forecast. Read through the documentation for the Mapbox API and figure out how to allow the user to drop a pin on any place on the map. Once the user drops a pin, grab its coordinates and feed those into your OpenWeatherMap API. Update the five-day forecast with the information from those coordinates (you should also get rid of your input boxes at this point).-->
+// <!--Add a Mapbox text input to search by location and have the forecast update when a new location is searched.-->
+// <!--As a bonus make sure you can update the marker's position to the new search result.-->
+
+
+    });
+
+
+</script>
+</body>
+</html>
