@@ -8,8 +8,28 @@
           integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 </head>
 
-<body>
-<div class="container d-flex flex justify-content-between"></div>
+<body class="bg-secondary">
+<div class="bg-warning text-center"><h1>Quasar Mapbox Weather Project</h1></div>
+<div class="bg-warning text-center">
+    <form>
+        <div class="mb-3">
+            <label for="searchLocation" class="form-label">Location</label>
+            <input type="" class="form-control" id="searchLocation" placeholder="Atlanta, GA">
+        </div>
+        <button type="search" class="btn btn-primary">Search</button>
+    </form>
+</div>
+<div class="firstDiv container d-flex flex justify-content-center bg-warning "></div>
+<div class="secDiv container d-flex flex justify-content-around bg-warning "></div>
+<div id="map"></div>
+
+<style>
+    #map {
+        /* the width and height may be set to any size */
+        width: 100%;
+        height: 700px;
+    }
+</style>
 <!-- JavaScript Bundle with Popper -->
 
 
@@ -19,6 +39,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
 <script src="keys.js"></script>
+<script src="js/weather-geocode.js"></script>
 <script>
 
     "use strict";
@@ -26,47 +47,141 @@
     $(document).ready(function () {
 
         // <!--Using HTML, CSS, jQuery, AJAX, and the OpenWeatherMap API, start by showing the current conditions for city you live in on your page.-->
-
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        var weatherData = {
             APPID: openWeatherKey,
-            q: "Atlanta, US",
+            // q: "Atlanta, US",
             lat: 33.749,
             lon: -84.388,
             units: "imperial"
+        }
+
+        function getRequestSearch() {
+            $.get("http://api.openweathermap.org/data/2.5/weather", weatherData).done(function (data) {
+                console.log(data);
 
 
-        }).done(function (data) {
-            console.log(data.list);
-// <!--Update your layout and AJAX request(s) to display a five day forecast for the city you live in that looks like the screenshot below.-->
-            for (var x = 0; x <= data.list.length; x += 8) {
-                console.log(x);
-                // var timeAndDate = data.list[x].dt_txt;
-                var timeAndDate = new Date()
-                console.log(timeAndDate);
-                var humid = data.list[x].main.humidity;
-                var temp = data.list[x].main.temp;
-                var image = "http://openweathermap.org/img/w/" + data.list[x].weather[0].icon + ".png"
-                console.log(image);
-                var html = '<div class="card bg-info" style="width: 10rem;">' +
-                    // '<di class="text-center text-success">' + '<strong>' + timeAndDate + '</strong>' +
-                    '<di class="text-center text-success">' + '<strong>' + timeAndDate + '</strong>' +
-// <!--If you want to add the icons the URLs for OpenWeatherMap's icons are formatted like: http://openweathermap.org/img/w/[icon].png where [icon] comes from the API response.-->
-                    '<img src="' + image + '" class="card-img-top" alt=".0.">' +
+                // Not using this. I just like the format. Good save for later
+                // var timeAndDate = new Date(data.dt * 1000).toLocaleDateString('en-US');
+                // console.log(timeAndDate);
+                // How to get date https://stackoverflow.com/questions/40761205/javascript-convert-timestamp-to-human-readable-date
+                function convertDateTime(date) {
+                    var timestamp = Number(new Date());
+                    date = new Date(timestamp);
+                    console.log(date);
+                    return date.toLocaleString();
+                    console.log(convertDateTime);
+                    console.log(date.toLocaleString());
+                }
+
+                function parseDate(timestamp) {
+                    return new Date(timestamp * 1000).toLocaleDateString();
+                }
+
+                // function convertdate(timeAndDate) {
+                //     var dtInMs = timeAndDate * 1000;
+                //     var dateObj = new Date(dtInMs);
+                //     return dateObj.toLocaleString();
+                // }
+                var atl = data.name;
+                var humid = data.main.humidity;
+                // console.log(humid);
+                var temp = data.main.temp;
+                // console.log(temp);
+                var feelsLike = data.main.feels_like;
+
+                var html =
+
+                    //won't give a break ^
+                    //         '<div>' + '<textarea></textarea>' + '</div>'
+                    '<br>' + '<div class="card bg-info" style="width: 10rem">' +
+                    '<h1 class="text-center">Daily Weather Report</h1>' +
+
+                    '<di class="text-center">' + '<strong>' + parseDate(data.dt) + '</strong>' +
+                    //     // <!--If you want to add the icons the URLs for OpenWeatherMap's icons are formatted like: http://openweathermap.org/img/w/[icon].png where [icon] comes from the API response.-->
+                    //     '<img src="' + image + '" class="card-img-top" alt=".0.">' +
+                    '<h1 class="text-center">' + atl + '</h1>' +
                     '<div class="card-body text-dark">' +
                     '<p class="card-title">' + 'Temp:' + '<br>' + temp + '</p>' +
                     '<p class="card-text">' + 'Humidity:' + '<br>' + humid + '</p>' +
+                    '<p class="card-text">' + 'Feels Like:' + '<br>' + feelsLike + '</p>' +
                     '<a href="#" class="btn btn-primary">Go</a>' +
                     '</div>' +
                     '</div>' +
                     '</div>';
 
-                // $('.car-img-top').attr('src', image)
-                $('.container').append(html);
-            }
+                $('.firstDiv').html(html);
+
+            });
 
 
+            // getRequestSearch();
+
+            $.get("http://api.openweathermap.org/data/2.5/forecast", weatherData).done(function (data) {
+                console.log(data);
+
+// <!--Update your layout and AJAX request(s) to display a five day forecast for the city you live in that looks like the screenshot below.-->
+
+                function convertdate(timeAndDate) {
+                    var dtInMs = timeAndDate * 1000;
+                    var dateObj = new Date(dtInMs);
+                    return dateObj.toLocaleString();
+                }
+                $('.secDiv').html('');
+                for (var x = 0; x < data.list.length; x += 8) {
+                    // console.log(x);
+                    var feelsLike = data.list[x].main.feels_like;
+                    var timeDate = data.list[x].dt;
+                    var formatDate = convertdate(timeDate);
+                    var humid = data.list[x].main.humidity;
+                    var temp = data.list[x].main.temp;
+
+                    var image = "http://openweathermap.org/img/w/" + data.list[x].weather[0].icon + ".png"
+                    var html = '<div class="card bg-info m-1 media-breakpoint-md" style="width: 10rem;">' +
+                        // '<di class="text-center text-success">' + '<strong>' + timeAndDate + '</strong>' +
+                        '<di class="text-center text-success">' + '<strong>' + formatDate + '</strong>' +
+                        // <!--If you want to add the icons the URLs for OpenWeatherMap's icons are formatted like: http://openweathermap.org/img/w/[icon].png where [icon] comes from the API response.-->
+                        '<img src="' + image + '" class="card-img-top" alt=".0.">' +
+                        '<div class="card-body text-dark">' +
+                        '<p class="card-title">' + 'Temperature:' + '<br>' + temp + '</p>' + '<hr>' +
+                        '<p class="card-title">' + 'Feels Like:' + '<br>' + feelsLike + '</p>' + '<hr>' +
+                        '<p class="card-text">' + 'Humidity:' + '<br>' + humid + '</p>' + '<hr>' +
+                        '<a href="#" class="btn btn-primary">Go</a>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+
+                    $('.secDiv').append(html);
+                }
+
+            });
+        }
+        getRequestSearch();
+        $('.btn').click(function (e) {
+            e.preventDefault();
+            var citySearch = $('#searchLocation').val();
+            geocode(citySearch, mapboxApiKey).then(function (results) {
+                console.log(results);
+                var lng = results[0]
+                var lat = results[1]
+                weatherData.lat = lat
+                weatherData.lon = lng
+                getRequestSearch();
+                // var popup = new mapboxgl.Popup()
+                //     .setHTML('<em>Thanks</em>')
+                //
+                // new mapboxgl.Marker()
+                //     .setLngLat(results)
+                //     .setPopup(popup)
+                //     .addTo(map)
+
+                // map.jumpTo({center: results})
+
+                //TODO: Instead of setCenter try using map.flyTo()
+                // map.flyTo({center: results})
+
+
+            });
         });
-
 
 
 // <!--Refer to your Mapbox API exercise. Recreate the map below your 5 day forecast. Read through the documentation for the Mapbox API and figure out how to allow the user to drop a pin on any place on the map. Once the user drops a pin, grab its coordinates and feed those into your OpenWeatherMap API. Update the five-day forecast with the information from those coordinates (you should also get rid of your input boxes at this point).-->
