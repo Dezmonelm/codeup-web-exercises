@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/weather_project.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 
     <style>
@@ -35,7 +35,6 @@
 <div id="map"></div>
 
 
-
 <!-- JavaScript Bundle with Popper -->
 
 
@@ -50,23 +49,42 @@
 <script>
 
     "use strict";
-    $('html').css('height', '100vh')
-    mapboxgl.accessToken = mapboxApiKey;
     $(document).ready(function () {
         // <!--Using HTML, CSS, jQuery, AJAX, and the OpenWeatherMap API, start by showing the current conditions for city you live in on your page.-->
+        // === API Keys ===
         var weatherData = {
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-84.388, 33.749],
-            zoom: 10,
             APPID: openWeatherKey,
             // q: "Atlanta, US",
             lat: 33.749,
             lon: -84.388,
             units: "imperial"
         }
-        var map = new mapboxgl.Map(weatherData);
+        mapboxgl.accessToken = mapboxApiKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-84.388, 33.749],
+            zoom: 10,
+        });
 
+// === Map Marker and Drag ===
+        var popup = new mapboxgl.Popup()
+            .setHTML('<em class="bg-info text-mute">Weather you like it or not ¯\\_(ツ)_/¯</em>')
+        var marker = new mapboxgl.Marker({
+            color: 'orange',
+            draggable: true
+        }).setLngLat({lng: -84.388, lat: 33.749})
+            .setPopup(popup)
+            .addTo(map)
+
+        marker.on("dragend", function () {
+            var location = marker.getLngLat();
+            weatherData.lon = location.lng;
+            weatherData.lat = location.lat;
+            getRequestSearch();
+        })
+
+// === function calls weather data for daily(weather) and 5 day forecast(forecast) ===
         function getRequestSearch() {
             $.get("http://api.openweathermap.org/data/2.5/weather", weatherData).done(function (data) {
                 console.log(data);
@@ -76,41 +94,21 @@
                 // console.log(timeAndDate);
                 // How to get date https://stackoverflow.com/questions/40761205/javascript-convert-timestamp-to-human-readable-date
 
-                function convertDateTime(date) {
-                    var timestamp = Number(new Date());
-                    date = new Date(timestamp);
-                    console.log(date);
-                    return date.toLocaleString();
-                    console.log(convertDateTime);
-                    console.log(date.toLocaleString());
-                }
 
                 function parseDate(timestamp) {
                     return new Date(timestamp * 1000).toLocaleDateString();
                 }
 
-                // function convertdate(timeAndDate) {
-                //     var dtInMs = timeAndDate * 1000;
-                //     var dateObj = new Date(dtInMs);
-                //     return dateObj.toLocaleString();
-                // }
                 var atl = data.name;
                 var humid = data.main.humidity;
-                // console.log(humid);
                 var temp = data.main.temp;
-                // console.log(temp);
                 var feelsLike = data.main.feels_like;
 
                 var html =
 
-                    //won't give a break ^
-                    //         '<div>' + '<textarea></textarea>' + '</div>'
                     '<br>' + '<div class="card bg-info" style="width: 10rem">' +
                     '<h1 class="text-center">Daily Weather Report</h1>' +
-
                     '<di class="text-center">' + '<strong>' + parseDate(data.dt) + '</strong>' +
-                    //     // <!--If you want to add the icons the URLs for OpenWeatherMap's icons are formatted like: http://openweathermap.org/img/w/[icon].png where [icon] comes from the API response.-->
-                    //     '<img src="' + image + '" class="card-img-top" alt=".0.">' +
                     '<h1 class="text-center">' + atl + '</h1>' +
                     '<div class="card-body text-dark">' +
                     '<p class="card-title">' + 'Temp:' + '<br>' + temp + '</p>' +
@@ -120,23 +118,7 @@
                     '</div>';
 
                 $('.firstDiv').html(html);
-                // create default marker
-                var marker = new mapboxgl.Marker({
-                    color: 'orange',
-                    draggable: true
-                })
-                    .setLngLat([weatherData.lon, weatherData.lat])
-                    .setPopup(popup)
-                    .addTo(map)
-
-                // map.jumpTo({center: results})
-                //
-                // //TODO: Instead of setCenter try using map.flyTo()
-                map.flyTo({center: results})
             });
-
-
-            // getRequestSearch();
 
             $.get("http://api.openweathermap.org/data/2.5/forecast", weatherData).done(function (data) {
                 console.log(data);
@@ -148,9 +130,9 @@
                     var dateObj = new Date(dtInMs);
                     return dateObj.toLocaleString();
                 }
+
                 $('.secDiv').html('');
                 for (var x = 0; x < data.list.length; x += 8) {
-                    // console.log(x);
                     var feelsLike = data.list[x].main.feels_like;
                     var timeDate = data.list[x].dt;
                     var formatDate = convertdate(timeDate);
@@ -159,7 +141,6 @@
 
                     var image = "http://openweathermap.org/img/w/" + data.list[x].weather[0].icon + ".png"
                     var html = '<div class="card bg-info m-1" style="width: 10rem;">' +
-                        // '<di class="text-center text-success">' + '<strong>' + timeAndDate + '</strong>' +
                         '<di class="text-center text-success">' + '<strong>' + formatDate + '</strong>' +
                         // <!--If you want to add the icons the URLs for OpenWeatherMap's icons are formatted like: http://openweathermap.org/img/w/[icon].png where [icon] comes from the API response.-->
                         '<img src="' + image + '" class="card-img-top" alt=".0.">' +
@@ -176,6 +157,7 @@
 
             });
         }
+
         getRequestSearch();
         $('.btn').click(function (e) {
             e.preventDefault();
@@ -190,31 +172,12 @@
                 var popup = new mapboxgl.Popup()
                     .setHTML('<em class="bg-info text-mute">Weather you like it or not ¯\\_(ツ)_/¯</em>')
 
-                var marker = new mapboxgl.Marker({
-                    color: 'orange',
-                    draggable: true
-                })
-                    .setLngLat([weatherData.lon, weatherData.lat])
-                    .setPopup(popup)
-                    .addTo(map)
-
-                // map.jumpTo({center: results})
-                //
-                // //TODO: Instead of setCenter try using map.flyTo()
                 map.flyTo({center: results})
+                marker.setLngLat({lng: lng, lat: lat})
+                    .setPopup(popup);
                 getRequestSearch();
-
-
-
             });
         });
-
-
-// <!--Refer to your Mapbox API exercise. Recreate the map below your 5 day forecast. Read through the documentation for the Mapbox API and figure out how to allow the user to drop a pin on any place on the map. Once the user drops a pin, grab its coordinates and feed those into your OpenWeatherMap API. Update the five-day forecast with the information from those coordinates (you should also get rid of your input boxes at this point).-->
-// <!--Add a Mapbox text input to search by location and have the forecast update when a new location is searched.-->
-// <!--As a bonus make sure you can update the marker's position to the new search result.-->
-
-
     });
 
 
