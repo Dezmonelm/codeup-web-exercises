@@ -89,151 +89,194 @@
         <a href="#" id="toggle-link">Click Here to see</a>
 </div>
 </dl>
+
+<h3>Don't Procrastinate</h3>
+<ul>
+    <li>It wastes time</li>
+    <li>It puts you behind</li>
+    <li>Creates bad habits</li>
+    <li>Sets you up for failure</li>
+</ul>
+<h3>Don't Get behind</h3>
+<ul>
+    <li>It's hard to catch back up</li>
+    <li>Makes it harder to stay on schedule</li>
+    <li>Makes it hard to get ahead</li>
+    <li>Creates a gap in learning</li>
+</ul>
+<h3>Finish On Time</h3>
+<ul>
+    <li>Creates good habits</li>
+    <li>Gives you a sense of security</li>
+    <li>Makes you feel accomplished</li>
+    <li>Makes you reliable</li>
+</ul>
+
+<a href="#">Toggle Button</a>
+<button type="button" id="listYellow">Last list item yellow</button>
+
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function () {
-        var html = "";
-        html += '<h1 class="highlight">10 Songs I like</h1>';
-        $("dt").first().prepend(html); //take HTML in my var > send it into a method to see it on the html page
-        var dTerms = $('dt');
-        var dDescription = $('dd');
-        // dDescription.addClass('invisible');
-        // dTerms.css('visibility', 'visible' )
-        $('a').css({
-            'font-size' : '20px',
-            'background-color' : 'red',
-            'font-weight' : 'bold'
+    // $(document).ready(function () {
+    //     var html = "";
+    //     html += '<h1 class="highlight">10 Songs I like</h1>';
+    //     $("dt").first().prepend(html); //take HTML in my var > send it into a method to see it on the html page
+    //     var dTerms = $('dt');
+    //     var dDescription = $('dd');
+    //     // dDescription.addClass('invisible');
+    //     // dTerms.css('visibility', 'visible' )
+    //     $('a').css({
+    //         'font-size' : '20px',
+    //         'background-color' : 'red',
+    //         'font-weight' : 'bold'
+    //     })
+    //     $('dd').css({
+    //         'color' : 'orange',
+    //         'font-size' : '20px',
+    //         'font-weight' : 'bold',
+    //         'background-color' : 'black',
+    //         'opacity' : '0.5'
+    //     })
+    //     console.log('HOWDY');
+    //     $('dl').css({
+    //         // '' : ',css
+    //         'border' : '1px solid red'
+    //     });
+    //     // $('dt').css('border', '2px solid black');
+    //     // $('dd').css({
+    //     //     "background-color": "#2d80cb",
+    //     //     "border": "3px solid pink"
+    //     // });
+    //     // var coolStuff = $('.invisible').toggleClass('.visible');
+    //     $('#toggle-link').click(function (e) {
+    //         e.preventDefault()
+    //         dDescription.css('invisibility','hidden')
+    //         $('.containerDiv').toggleClass('invisibility');
+    //
+    //              //Let's add and removing a LABEL [class] with our style
+    //         console.log('AAARRRRRGGGHHH!!!!');
+    //         dTerms.addClass('text-center container text-wrap');
+    //         $('#tum').css({
+    //             // refactor css
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             'background-image' : 'url("./images/tum.png")',
+    //             // 'background-color' : 'orange',
+    //             'opacity' : '0.9'
+    //         })
+    //         $('#bones').css({
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             'background-image' : 'url("./images/bone.jpeg")',
+    //             // 'background-color' : 'blue',
+    //             'opacity' : '0.9'
+    //         })
+    //         $('#thriller').css({
+    //             'width' : '100vw',
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             // 'background-repeat' : 'no-repeat',
+    //             'background-image' : 'url("./images/thriller.jpeg")',
+    //             // 'background-color' : '#8f8',
+    //             'opacity' : '0.9'
+    //         })
+    //         $('#destiny').css({
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             'background-image' : 'url("./images/Albumism_DestinysChild_TheWritingsOnTheWall_MainImage.jpeg")',
+    //             // 'background-color' : 'red',
+    //             'opacity' : '0.9'
+    //         })
+    //         $('#luniz').css({
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             'background-image' : 'url("./images/lulniz.jpeg")',
+    //             // 'background-color' : 'pink',
+    //             'opacity' : '0.9'
+    //         })
+    //         $('#dixie').css({
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             'background-image' : 'url("./images/dixieChix.jpeg")',
+    //             'background-color' : 'yellow',
+    //             'opacity' : '0.9'
+    //         })
+    //         $('#say').css({
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             'background-image' : 'url("./images/say.jpg")',
+    //             'background-color' : 'brown',
+    //             'opacity' : '0.9'
+    //         })
+    //         $('#never').css({
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             'background-image' : 'url("./images/neverf.jpeg")',
+    //             'background-color' : 'green',
+    //             'opacity' : '0.9'
+    //         })
+    //         $('#me').css({
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             'background-image' : 'url("./images/grove.jpeg")',
+    //             // 'background-color' : 'purple',
+    //             'opacity' : '0.9'
+    //         })
+    //         $('#nas').css({
+    //             'font-family' : 'Marker Felt',
+    //             'font-size' : '40px',
+    //             'text-align' : 'right',
+    //             'background-image' : 'url("./images/nas-j-cole-let-nas-down.jpeg")',
+    //             // 'background-color' : 'coral',
+    //             'opacity' : '0.9'
+    //         })
+    //         $()
+    //     $('body').css({
+    //         'display': 'flex',
+    //         'width' : '100vw',
+    //         'height' : '100vh',
+    //         'background-image': 'url(images/nickHomies.jpeg)',
+    //         'background-repeat': 'no-repeat',
+    //         'background-size' : 'cover',
+    //         // 'opacity' : '0.7',
+    //         'background-attachment' : 'fixed'
+    //     }).html();
+    //     $('dd').css('border', '4px solid black');
+    //     })
+    //     console.log('meh');
+    // });
+
+// Traversing
+$(document).ready(function () {
+    $('#listYellow').click(function(event){
+        event.preventDefault();
+        $('ul').each(function () {
+            $(this).children().last().css('background-color', 'yellow')
         })
-        $('dd').css({
-            'color' : 'orange',
-            'font-size' : '20px',
-            'font-weight' : 'bold',
-            'background-color' : 'black',
-            'opacity' : '0.5'
-        })
-        console.log('HOWDY');
-        $('dl').css({
-            // '' : ',css
-            'border' : '1px solid red'
-        });
-        // $('dt').css('border', '2px solid black');
-        // $('dd').css({
-        //     "background-color": "#2d80cb",
-        //     "border": "3px solid pink"
-        // });
-        // var coolStuff = $('.invisible').toggleClass('.visible');
-        $('#toggle-link').click(function (e) {
-            e.preventDefault()
-            dDescription.css('invisibility','hidden')
-            $('.containerDiv').toggleClass('invisibility');
-
-                 //Let's add and removing a LABEL [class] with our style
-            console.log('AAARRRRRGGGHHH!!!!');
-            dTerms.addClass('text-center container text-wrap');
-            $('#tum').css({
-                // refactor css
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                'background-image' : 'url("./images/tum.png")',
-                // 'background-color' : 'orange',
-                'opacity' : '0.9'
-            })
-            $('#bones').css({
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                'background-image' : 'url("./images/bone.jpeg")',
-                // 'background-color' : 'blue',
-                'opacity' : '0.9'
-            })
-            $('#thriller').css({
-                'width' : '100vw',
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                // 'background-repeat' : 'no-repeat',
-                'background-image' : 'url("./images/thriller.jpeg")',
-                // 'background-color' : '#8f8',
-                'opacity' : '0.9'
-            })
-            $('#destiny').css({
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                'background-image' : 'url("./images/Albumism_DestinysChild_TheWritingsOnTheWall_MainImage.jpeg")',
-                // 'background-color' : 'red',
-                'opacity' : '0.9'
-            })
-            $('#luniz').css({
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                'background-image' : 'url("./images/lulniz.jpeg")',
-                // 'background-color' : 'pink',
-                'opacity' : '0.9'
-            })
-            $('#dixie').css({
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                'background-image' : 'url("./images/dixieChix.jpeg")',
-                'background-color' : 'yellow',
-                'opacity' : '0.9'
-            })
-            $('#say').css({
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                'background-image' : 'url("./images/say.jpg")',
-                'background-color' : 'brown',
-                'opacity' : '0.9'
-            })
-            $('#never').css({
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                'background-image' : 'url("./images/neverf.jpeg")',
-                'background-color' : 'green',
-                'opacity' : '0.9'
-            })
-            $('#me').css({
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                'background-image' : 'url("./images/grove.jpeg")',
-                // 'background-color' : 'purple',
-                'opacity' : '0.9'
-            })
-            $('#nas').css({
-                'font-family' : 'Marker Felt',
-                'font-size' : '40px',
-                'text-align' : 'right',
-                'background-image' : 'url("./images/nas-j-cole-let-nas-down.jpeg")',
-                // 'background-color' : 'coral',
-                'opacity' : '0.9'
-            })
-            $()
-        $('body').css({
-            'display': 'flex',
-            'width' : '100vw',
-            'height' : '100vh',
-            'background-image': 'url(images/nickHomies.jpeg)',
-            'background-repeat': 'no-repeat',
-            'background-size' : 'cover',
-            // 'opacity' : '0.7',
-            'background-attachment' : 'fixed'
-        }).html();
-        $('dd').css('border', '4px solid black');
-        })
-
-        console.log('meh');
-
-
     })
+
+    $('h3').click(function (e) {
+        e.preventDefault()
+        $(this).next().css('font-weight', 'bold');
+    });
+
+    $('li').click(function (e) {
+        e.preventDefault();
+        $(this).parent().children().first().css('color', 'blue')
+    });
+});
 
 </script>
 </body>
