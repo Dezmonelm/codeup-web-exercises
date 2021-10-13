@@ -31,7 +31,7 @@
         </div>
     </form>
 </div>
-
+<textarea placeholder="ENTER KONAMI CODE"></textarea>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <!--<script src="/js/jquery.js"></script>-->
 <script>
@@ -40,13 +40,14 @@
     <!--Allow the user to enter the Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter" (the return key)-->
     $(document).ready(function(event){
         event.preventDefault;
-        prompt('Enter the konami code')
-        // var userInput = $('#input');
-        // userInput = userInput.toLowerCase();
+        var userInput = $('#input');
+        var collectedInput = ''
+        userInput = userInput.toLowerCase();
         var konamiCode = '↑ ↑ ↓ ↓ ← → ← → b a enter';
-        $('#input').keyup(function (e) {
+        userInput.keyup(function (e) {
             e.preventDefault;
             alert('up');
+            console.log(collectedInput);
             console.log(userInput);
         });
         console.log(event.keyCode);
