@@ -106,16 +106,16 @@
 
                 var html =
 
-                    '<br>' + '<div class="card bg-info" style="width: 10rem">' +
-                    '<h1 class="text-center">Daily Weather Report</h1>' +
-                    '<di class="text-center">' + '<strong>' + parseDate(data.dt) + '</strong>' +
-                    '<h1 class="text-center">' + atl + '</h1>' +
-                    '<div class="card-body text-dark">' +
-                    '<p class="card-title">' + 'Temp:' + '<br>' + temp + '</p>' +
-                    '<p class="card-text">' + 'Humidity:' + '<br>' + humid + '</p>' +
-                    '<p class="card-text">' + 'Feels Like:' + '<br>' + feelsLike + '</p>' +
-                    '</div>' +
-                    '</div>';
+                    `<br><div class="card bg-info" style="width: 10rem">
+                    <h1 class="text-center">Daily Weather Report</h1>
+                    <di class="text-center"><strong> ${parseDate(data.dt)} </strong>
+                    <h1 class="text-center"> ${atl} </h1>
+                    <div class="card-body text-dark">
+                    <p class="card-title"> Temp: <br> ${temp} </p>
+                    <p class="card-text"> Humidity: <br> ${humid} </p>
+                    <p class="card-text">  Feels Like: <br>  ${feelsLike} </p>
+                    </div>
+                    </div>`;
 
                 $('.firstDiv').html(html);
             });
@@ -140,17 +140,17 @@
                     var temp = data.list[x].main.temp;
 
                     var image = "http://openweathermap.org/img/w/" + data.list[x].weather[0].icon + ".png"
-                    var html = '<div class="card bg-info m-1" style="width: 10rem;">' +
-                        '<di class="text-center text-success">' + '<strong>' + formatDate + '</strong>' +
+                    var html = `<div class="card bg-info m-1" style="width: 10rem;">
+                        <di class="text-center text-success"><strong>${formatDate}</strong>
                         // <!--If you want to add the icons the URLs for OpenWeatherMap's icons are formatted like: http://openweathermap.org/img/w/[icon].png where [icon] comes from the API response.-->
-                        '<img src="' + image + '" class="card-img-top" alt=".0.">' +
-                        '<div class="card-body text-dark">' +
-                        '<p class="card-title">' + 'Temperature:' + '<br>' + temp + '</p>' + '<hr>' +
-                        '<p class="card-title">' + 'Feels Like:' + '<br>' + feelsLike + '</p>' + '<hr>' +
-                        '<p class="card-text">' + 'Humidity:' + '<br>' + humid + '</p>' + '<hr>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>';
+                        <img src="${image}" class="card-img-top" alt=".0.">
+                        <div class="card-body text-dark">
+                        <p class="card-title">Temperature:<br>${temp}</p><hr>
+                        <p class="card-title">Feels Like:<br>${feelsLike}</p><hr>
+                        <p class="card-text">Humidity:<br>${humid}</p><hr>
+                        </div>
+                        </div>
+                        </div>`;
 
                     $('.secDiv').append(html);
                 }
