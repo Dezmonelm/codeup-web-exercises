@@ -92,7 +92,7 @@ users.forEach(function(user) {
 });
 
 // TODO: Use `let` for the following variable
-let list = '<ul>';
+let list = `<ul>`;
 
 // TODO: rewrite the following loop to use a for..of loop
 // developers.forEach(function (developer) {
@@ -105,3 +105,5 @@ list += `</ul>`;
 
 console.log(developers);
 console.log(list);
+
+// document.querrySlector(#developers).innerHTML = list
