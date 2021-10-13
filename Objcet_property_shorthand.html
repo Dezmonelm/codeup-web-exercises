@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Property Shorthand</title>
+</head>
+<body>
+<script>
+'use strict';
+// Vanilla JS
+var a1 = 'money';
+var b1 = 'respect';
+var c1 = 'power';
+var d1 = 'cars';
+var e1 = 'gold chains';
+var f1 = 'trap house';
+
+var oldGangsta = {
+     a: a1,
+    b : b1,
+    c : c1,
+    d : d1,
+    e : e1,
+    f : f1
+};
+
+console.log(oldGangsta);
+
+// ES6
+let a = 'money';
+let b = 'respect';
+let c = 'power';
+let d = 'cars';
+let e = 'gold chains';
+let f = 'trap house';
+
+//ES6 allow you to leave off the value in the object. You can call the key and it will log the value using the ES6 capability. ES6 was designed to make object initialization shorter.
+
+let gangsta = {
+    a,
+    b,
+    c,
+    d,
+    e,
+    f
+};
+//You can't write the objects on the page because HTML itself can't parse objects. You can serialize it to a string though.
+// document.write(gangsta);
+// document.write(JSON.stringify(gangsta));
+console.log(gangsta);
+</script>
+</body>
+</html>
