@@ -14,24 +14,55 @@
             <label class="fw-bold" id="diffLevel">Difficulty</label>
             <div>
                 <select class="col-12">
-                    <option>Easy</option>
-                    <option>Normal</option>
-                    <option>Hard</option>
+                    <option class="easy">Easy</option>
+                    <option class="normal">Normal</option>
+                    <option class="hard">Hard</option>
                 </select>
             </div>
         </div>
-        <div>
-            <label class="fw-bold" id="command1">Type: 'music'</label>
-            <div>
-                <input class="col-12 mb-1" type="search" id="input" placeholder="DO NOT SUBMIT!!!">
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <button class="col-6 btn-color" id="testField" type="submit">Submit</button>
-        </div>
+<!--        <div>-->
+<!--            <label class="fw-bold" id="command1">Type: 'music'</label>-->
+<!--            <div>-->
+<!--                <input class="col-12 mb-1" type="search" id="input" placeholder="DO NOT SUBMIT!!!">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="d-flex justify-content-center">-->
+<!--            <button class="col-6 btn-color" id="testField" type="submit">Submit</button>-->
+<!--        </div>-->
     </form>
 </div>
-<textarea placeholder="ENTER KONAMI CODE"></textarea>
+<textarea id="input" placeholder="ENTER KONAMI CODE"></textarea>
+<!--<input id="B" value="I'm so fancy">-->
+<!--<button id="fancyB">Hello Test Taker!</button>-->
+
+<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--    "use strict"-->
+
+<!--    $('#fancyB').hover(-->
+<!--        function() {-->
+<!--            $(this).css('background-color', 'papayawhip');-->
+<!--        },-->
+<!--        function() {-->
+<!--            $(this).css('background-color', '#FFF');-->
+<!--        }-->
+<!--    );-->
+<!--</script>-->
+<!--<h1 id="user_display">show the input here with button click</h1>-->
+<!--<input id="user_input">-->
+<!--<button id="clickme">click me</button>-->
+
+<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--    "use strict"-->
+<!--    // vanilla js-->
+<!--    // document.getElementById("clickme").addEventListener('click',function(){-->
+<!--    //     document.getElementById('user_display').innerHTML = document.getElementById("user_input").value;-->
+<!--    // },false);-->
+<!--    $('#clickme').click(function(){-->
+<!--        $('#user_display').html($('#user_input').val());-->
+<!--    });-->
+<!--</script>-->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <!--<script src="/js/jquery.js"></script>-->
 <script>
@@ -40,18 +71,25 @@
     <!--Allow the user to enter the Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter" (the return key)-->
     $(document).ready(function(event){
         event.preventDefault;
-        var userInput = $('#input');
+        $("div").animate({fontSize: '100px'}, "slow");;
+        var userInput = $('#input')
         var collectedInput = ''
-        userInput = userInput.toLowerCase();
+        collectedInput = collectedInput.toLowerCase();
         var konamiCode = '↑ ↑ ↓ ↓ ← → ← → b a enter';
         userInput.keyup(function (e) {
             e.preventDefault;
-            alert('up');
-            console.log(collectedInput);
-            console.log(userInput);
-        });
-        console.log(event.keyCode);
+
+        //     if(collectedInput === konamiCode){
+        //         var image = new Image();
+        //         image.src = pizza.png;
+        //         $('body').append(image);
+        //
+        //
+        // });
+        // console.log(event.keyCode);
         // console.log(keyup);
+        console.log(collectedInput);
+        console.log(userInput);
     });
 
     <!--Find the matching sequence using the code above for each key in the Konami Code.-->
