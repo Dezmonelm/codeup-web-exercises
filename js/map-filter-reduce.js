@@ -47,10 +47,40 @@ console.log(threeOrMoreLangauges);
 
 //     Use .map to create an array of strings where each element is a user's email address
 
+let usersEmail = users.map(function (address) {
+    return address.email;
+});
+
+console.log(usersEmail);
+
 // Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
+
+let sumOfExperience = users.reduce(function (sumYears, userYears) {
+    return sumYears + userYears.yearsOfExperience;
+}, 0);
+
+let sumAverage = sumOfExperience / users.length;
+console.log(sumOfExperience);
+console.log(sumAverage);
 
 //     Use .reduce to get the longest email from the list of users.
 
+let longestEmail = usersEmail.reduce(function (longest, mail) {
+
+    return longest.length > mail.length ? longest : mail;
+});
+// console.log(longest);
+console.log(longestEmail);
+
+// let longestEmail = users.reduce(function (email1, email2) {
+//     return email1.email.length > email2.email.length ? email1 : email2;
+// });
+
 //     Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
+let usersStingNames = users.reduce(function (stringNames, userNames) {
+    return
+});
+
+console.log(usersStingNames);
 // Use .reduce to get the unique list of languages from the list of users.
