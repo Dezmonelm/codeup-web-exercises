@@ -48,21 +48,21 @@
 <!--        }-->
 <!--    );-->
 <!--</script>-->
-<!--<h1 id="user_display">show the input here with button click</h1>-->
-<!--<input id="user_input">-->
-<!--<button id="clickme">click me</button>-->
+<h1 id="user_display">show the input here with button click</h1>
+<input id="user_input">
+<button id="clickme">click me</button>
 
-<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
-<!--<script type="text/javascript">-->
-<!--    "use strict"-->
-<!--    // vanilla js-->
-<!--    // document.getElementById("clickme").addEventListener('click',function(){-->
-<!--    //     document.getElementById('user_display').innerHTML = document.getElementById("user_input").value;-->
-<!--    // },false);-->
-<!--    $('#clickme').click(function(){-->
-<!--        $('#user_display').html($('#user_input').val());-->
-<!--    });-->
-<!--</script>-->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    "use strict"
+    // vanilla js
+    document.getElementById("clickme").addEventListener('click',function(){
+        document.getElementById('user_display').innerHTML = document.getElementById("user_input").value;
+    },false);
+    $('#clickme').click(function(){
+        $('#user_display').html($('#user_input').val());
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <!--<script src="/js/jquery.js"></script>-->
 <script>
@@ -72,24 +72,26 @@
     $(document).ready(function(event){
         event.preventDefault;
         $("div").animate({fontSize: '100px'}, "slow");;
-        var userInput = $('#input')
+        var userInput = $('#input');
         var collectedInput = ''
         collectedInput = collectedInput.toLowerCase();
-        var konamiCode = '↑ ↑ ↓ ↓ ← → ← → b a enter';
+        var konamiCode = 'b';  <!--'↑ ↑ ↓ ↓ ← → ← → b a enter';-->
         userInput.keyup(function (e) {
             e.preventDefault;
+                $(this).val();
+                console.log(userInput.val());
 
-        //     if(collectedInput === konamiCode){
-        //         var image = new Image();
-        //         image.src = pizza.png;
-        //         $('body').append(image);
-        //
-        //
-        // });
+                if(collectedInput === konamiCode){
+                    var image = new Image();
+                    image.src = pizza.png;
+                    $('body').append(image);
+
+        }
+        });
         // console.log(event.keyCode);
-        // console.log(keyup);
+        // console.log(userInput.keyup);
         console.log(collectedInput);
-        console.log(userInput);
+
     });
 
     <!--Find the matching sequence using the code above for each key in the Konami Code.-->
