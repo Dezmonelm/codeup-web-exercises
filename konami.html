@@ -74,16 +74,16 @@
         $("div").animate({fontSize: '100px'}, "slow");;
         var userInput = $('#input');
         var collectedInput = ''
-        collectedInput = collectedInput.toLowerCase();
-        var konamiCode = 'b';  <!--'↑ ↑ ↓ ↓ ← → ← → b a enter';-->
+        var konamiCode = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter';
         userInput.keyup(function (e) {
             e.preventDefault;
-                $(this).val();
-                console.log(userInput.val());
+                e.key;
+                console.log(e.key);
+                collectedInput =collectedInput + e.key;
 
-                if(collectedInput === konamiCode){
+                if(collectedInput.includes(konamiCode)){
                     var image = new Image();
-                    image.src = pizza.png;
+                    image.src = '/images/pizza.png';
                     $('body').append(image);
 
         }

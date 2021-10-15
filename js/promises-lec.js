@@ -42,10 +42,10 @@
 //     console.log(err);
 // });
 
-// fetch('https://pokeapi.co/api/v2/pokemon')
-//     .then((response) => response.json())
-//     .then((jsonData) => jsonData.results)
-//     .then((results) => results.forEach((result)=>console.log(result.name)));
+fetch('https://pokeapi.co/api/v2/pokemon')
+    .then((response) => response.json())
+    .then((jsonData) => jsonData.results)
+    .then((results) => results.forEach((result)=>console.log(result.name)));
 // TODO: Finally, chain another .then method that would log all of the name properties of the
 //  returned pokemon.
 // BONUS: Is there a way for us to clean up our code?
