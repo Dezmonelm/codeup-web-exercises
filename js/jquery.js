@@ -1,6 +1,6 @@
 "use strict";
 
-// $(document).ready(function() {
+$(document).ready(function() {
 //     alert('Javescript page is ready')
 //     // INSERT JAVASCRIPT CODE SAMPLE HERE
 //
