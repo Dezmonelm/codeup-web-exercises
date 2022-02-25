@@ -45,7 +45,7 @@ function isEmptyString(input) {
 
 // function isEmptyString(input) {
 //     return input === '';
-}
+// }
 
 // Define a function named isNotANumber that accepts an input and returns true or false based on whether an input is a non-numeric value or not. Numbers as strings are not a number and should return true.
 
@@ -72,8 +72,13 @@ function isNegative(Number) {
 // }
 // Define a function named isZero that will return true when passed an argument of the numeric value 0, and return false for all other arguments.
 
-function isZero(0) {
-    return num === 0;
+function isZero(num) {
+    if (num === 0){
+        return true;
+    } else {
+        return false;
+    }
+
 }
 
 // function isZero(0) {
@@ -85,13 +90,18 @@ function isZero(0) {
 //     return input === [];
 // }
 //
-// var isArray(input){
-//     return Array.isArray(input);
-// }
+function isArray(input){
+    return Array.isArray(input);
+}
 // Define a function named upperCase that takes in a single input. If the input is not a string, return false. If the input is a non-numeric string, then return it with all the letters capitalized.
 
 function upperCase(input) {
-    return
+    if (input === isString()){
+        return input.toUpperCase();
+    } else {
+        return false;
+    }
+
 }
 
 // function upperCase(input) {
